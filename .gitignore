@@ -4,6 +4,7 @@
 *.toc
 *.out
 *.toc
+*.lof
 
 # Intermediat files
 current_commit.tex
