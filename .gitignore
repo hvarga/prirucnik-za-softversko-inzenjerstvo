@@ -1,0 +1,6 @@
+# Core LaTeX auxiliary files
+*.aux
+*.log
+
+# Output files
+*.pdf
