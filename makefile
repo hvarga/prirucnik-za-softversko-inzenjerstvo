@@ -3,8 +3,8 @@ build:
 	@git log -1 --format=\\verb+%H+ > book/current_commit.tex
 	
 	@# We need to call pdflatex twice to generate all data.
-	@cd book && pdflatex -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
-	@cd book && pdflatex -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
+	@cd book && pdflatex -halt-on-error -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
+	@cd book && pdflatex -halt-on-error -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
 	
 	@echo "PDF file generated at `pwd`/book/prirucnik_za_softversko_inzenjerstvo.pdf."
 clean:
