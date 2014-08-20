@@ -6,6 +6,7 @@ build:
 	@cd book && pdflatex -halt-on-error -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
 	@cd book && bibtex prirucnik_za_softversko_inzenjerstvo.aux > /dev/null
 	@cd book && pdflatex -halt-on-error -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
+	@cd book && pdflatex -halt-on-error -jobname=prirucnik_za_softversko_inzenjerstvo main.tex > /dev/null
 	
 	@echo "PDF file generated at `pwd`/book/prirucnik_za_softversko_inzenjerstvo.pdf."
 clean:

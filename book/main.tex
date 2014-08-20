@@ -1,6 +1,6 @@
 \input{preamble}
 
-\begin{document}    
+\begin{document}
     \frontmatter
         \pagestyle{empty}
         \input{title_page}
@@ -17,6 +17,7 @@
             \include{chapters/java_programming_language_introduction/java_technology}
         \end{part}
         
-    \addcontentsline{toc}{chapter}{Bibliografija}
-    \printbibliography
+    \backmatter
+        \pagestyle{empty}
+        \printbibliography[heading=bibintoc]
 \end{document}
