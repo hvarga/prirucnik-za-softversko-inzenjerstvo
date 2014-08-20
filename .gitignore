@@ -5,6 +5,11 @@
 *.out
 *.toc
 *.lof
+*blx.bib
+*.bbl
+*.blg
+*synctex.gz
+*.xml
 
 # Intermediat files
 current_commit.tex
