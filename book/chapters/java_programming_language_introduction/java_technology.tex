@@ -4,8 +4,8 @@ Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenu
 Slika~\ref{fig:software-development-process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
 
 \begin{figure}[h!]
-    \label{fig:software-development-process}
     \caption{Proces razvoja Java aplikacije.}
+    \label{fig:software-development-process}
     \centering
     \includegraphics[width=\textwidth]{images/software-development-process}
 \end{figure}
@@ -46,8 +46,8 @@ java\footnote{Više o \texttt{java} alatu možete pročitati na fusnoti \ref{ftn
 Java virtualna mašina je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java-platform-benefits}~\cite{javatutorials}.
 
 \begin{figure}[h!]
-    \label{fig:java-platform-benefits}
     \caption{Prednosti Java platforme.}
+    \label{fig:java-platform-benefits}
     \centering
     \includegraphics[scale=0.6]{images/java-platform-benefits.png}
 \end{figure}
@@ -80,11 +80,11 @@ Java platforma se sastoji od dva dijela:
     \item Aplikacijsko programsko sučelje (API)
 \end{itemize}
 
-Slika\ref{fig:java-platform-layer-model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
+Slika~\ref{fig:java-platform-layer-model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
 
 \begin{figure}[h!]
-    \label{fig:java-platform-layer-model}
     \caption{Slojeviti model Java platforme.}
+    \label{fig:java-platform-layer-model}
     \centering
     \includegraphics[scale=0.6]{images/java-platform-layer-model.png}
 \end{figure}
@@ -127,3 +127,152 @@ Java programski jezik također ima i neke svoje osobine koje je bitno znati:
 \end{itemize}
 
 \section{Potreban alat za razvoj Java aplikacija}
+Za razvoj Java aplikacija minimalno je potrebno sljedeće:
+
+\begin{itemize}
+    \item JDK (\emph{Java Development Kit})
+    \item Tekst editor
+\end{itemize}
+
+\subsection{JDK}
+JDK je razvojno okruženje za izradu Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/javase/downloads}.
+
+\begin{infobox}
+    JDK sadrži sve potrebne komponente za razvoj Java aplikacija. Tu su i alati za prevođenje i pokretanje Java aplikacija, alat za generiranje dokumentacije pisane u samom izvornom kôdu, alati za distribuciju Java aplikacija, alat za debugging\footnote{\emph{Debugging} je process nalaženja i ispravljanja grešaka koji su nastali prilikom razvoja softvera ili hardvera. Konkretno kada govorimo o Java tehnologiji, postoji alat (\texttt{jdb}) koji omogućuje programeru Java aplikacije da, zapravo, pauzira izvršavanje aplikacije u nekoj proizvoljnoj točci tj. liniji izvornog kôda. U tom trenutku, kada se izvršavanje aplikacije pauzira, programer ima na uvid o stanju svake varijable tj. njihove vrijednosti. Nadalje, programer je sada u mogućnosti da kontolira izvršavanje programa korak po korak te tako prati mijenjanje stanja variabli i kontrolira tijek izvršavanja.} te razni alati za profiling\footnote{U softverskom injženjerstvu, \emph{profiling} je forma dinamičke programske analize pomoću koje možemo napraviti različita mjerenja. Mjerenja mogu uključivati zauzeće memorije, vremensku kompleksnost aplikacije, frekvencija korištenja nekih djelova izvornog kôda. \emph{Profiling} se najčešće koristi za potrebe optimizacije aplikacije.} Java aplikacija.
+\end{infobox}
+
+Neke od komponenti od kojeg se JDK sastoji su:
+
+\begin{itemize}
+    \item Razvojni alati za razne namjene. Među tim alatima su i \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jar}, \texttt{jdb}, \texttt{VisualVM}.
+    \item JRE (\emph{Java Runtime Environment})
+    \item Izvorni kôd osnovnog Java API-a
+\end{itemize}
+
+\subsection{Tekstualni editor}
+Tekstualni editor je potreban za pisanje izvornog kôda u Java programskom jeziku. Iako dolazi sa svakim operacijskim sustavom, za početnike se ipak preporučuje da se koristi Notepad++ ako koristite Microsoft Windows operacijski sustav ili Geany ako koristiti GNU/Linux.
+
+\begin{infobox}
+    Početnicima se preporučuje da koriste Geany ili Notepad++.
+\end{infobox}
+
+Slike ~\ref{fig:geany} i ~\ref{fig:notepadpp} prikazuju tekst editore. Iako su to dvije različite aplikacije one zapravo imaju slične funkcionalnosti kao što su:
+
+\begin{itemize}
+    \item Bojanje i isticanje djelova kôda,
+    \item Sakrivanje djelova kôda,
+    \item Automatsko završavanje ključnih riječi, varijabli i ostalih segmenata u izvornom kôdu.
+\end{itemize}
+
+Naravno, lista iznad sadrži samo jedan mali set mogučnosti tekstualnih editora. No sva ta funkcionalnost je tu isključivo da olakša programeru njegov posao.
+
+No pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja.
+
+\begin{figure}[h!]
+    \caption{Geany.}
+    \label{fig:geany}
+    \centering
+    \includegraphics[max width=\textwidth]{images/geany.png}
+\end{figure}
+\begin{figure}[h!]
+    \caption{Notepad++.}
+    \label{fig:notepadpp}
+    \centering
+    \includegraphics[max width=\textwidth]{images/notepadpp.png}
+\end{figure}
+
+\subsection{Integrirano razvojno okruženje}
+IDE (eng. \emph{Integrated Development Environment}) ili integrirano razvojno okruženje je softverski paket koji softverskim inženjerima pruža veliku paletu mogućnosti na jednom mjestu, tj. pod jednim korisničkim sučeljem. Tipično se sastoji od sljedećeg:
+
+\begin{itemize}
+    \item tekstualni editor,
+    \item izrada distribucije aplikacije i integracija,
+    \item prevoditelj,
+    \item \emph{debugger},
+    \item interpreter,
+    \item izrada dokumentacije,
+    \item detaljan pregled strukture izvornog kôda,
+    \item verzioniranje izvornog kôda.
+\end{itemize}
+
+Kao i kod tekstualnih editora, lista iznad nije konačna te zavisi koji softverski paket se koristi.
+
+\begin{infobox}
+    Integrirana razvojna okruženja integriraju većinu alata i procesa koji su potrebni prilikom razvoja softvera pod jednim unificiranim korisničkim sučeljem. Time povećavaju produktivnost softverskom inženjeru smanjujući repetitivnost i manualni rad. Integrirana razvojna okruženja imaju i dublju semantiku tako da softverski inženjeri imaju bolji pregled nad izvornim kôdom te je i s time olakšano njegovo pisanje.
+\end{infobox}
+
+Prednosti integriranog razvojnog okruženja su očigledne. Dosad ste, čitajući ovaj priručnik, vjerojatno dobili dojam da je Java tehnologija kompleksna i heterogena. I u pravu ste; sastoji se od mnoštvo komponenti koji su zapravo vezani jedno za drugo. Isto tako, postoji mnoštvo alata bez kojih se ne može razvijati Java aplikacija. No to nisu jedini alati s kojima se softverski inženjer služi svakodnevno za obavljanje svog posla. A pravi dojam će se steći tek kasnije kada se vaša aplikacija mora integrirati u nekakav drugi sustav. Integrirano razvojno okruženje sakriva tu kompleksnost do neke granice te vam omogućava da se usredotočite na ono najvažnije, a to je razvoj softvera.
+
+Srećom, postoji nekoliko integriranih razvojnih okruženja za Java tehnologiju. No mi ćemo ovdje spomenuti samo dva; NetBeans IDE i Eclipse.
+
+\subsubsection{NetBeans IDE}
+NetBeans IDE je integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. No podržava i razvoj aplikacija u PHP i C/C++ programskim jezicima. Podržava Apache Ant\footnote{Jedna od najčešćih primjena Apache Ant alata je za izradu distribucije Java aplikacije. No, alat ima puno veće i širje mogučnosti. Detaljne informacije možete dobiti na \url{http://ant.apache.org/}. Alat je \emph{open source} te ga sa istog linka možete i besplatno preuzeti.} i Apache Maven\footnote{Apache Maven je jedna od alternativa Apache Ant alatu. No Apache Maven je usko vezan za Java tehnologiju; koristi se isljučivo na Java baziranim projektima. Kao i Apache Ant, Apache Maven je isto \emph{open source} projekt. Besplatno preuzimanje i više informacija o njemu možete naći na \url{http://maven.apache.org/}.} te razne alate za verzioniranje izvornog kôda kao što su Apache Subversion\footnote{Apache Subversion je alat za verzioniranje izvornog kôda. Kao i ostali alati iz Apache Foundation, Apache Subversion je \emph{open source} te se besplatno može preuzeti sa \url{http://subversion.apache.org/}.}, Mercurial\footnote{Mercurial je \emph{open source} alat za verzioniranje izvornog kôda. Besplatno preuzimanje je moguće sa \url{http://mercurial.selenic.com/}.} i Git\footnote{Git je \emph{open source} alat za verzioniranje izvornog kôda napisan od strane Linus Torvaldsa - čovjeka odgovornog za razvoj Linux projekta. Besplatno preuzimanje je moguće sa \url{http://git-scm.com/}.}.
+
+\begin{infobox}
+    NetBeans IDE je izdan od strane Oracle Corporation i on je službeni alat za razvoj Java aplikacija.
+\end{infobox}
+
+Naravno, dolazi s punom podrškom za Java tehnologiju te je integriran sa \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jdb}. Ima ugrađeno podršku za \emph{profiling} Java aplikacija (NetBeans Profiler). Integriran je i sa alatima za testiranje kao što su JUnit\footnote{JUnit je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://junit.org/}.} i TestNG\footnote{TestNG je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Alternativa je JUnit alatu i dostupan je za besplatno preuzimanje sa \url{http://testng.org}.} te ima podršku za statičnu analizu izvornog kôda putem FindBugs\footnote{FindBugs je \emph{open source} alat koji je namjenjen za statičnu analizu izvornog kôda napisanog u Javi u svrhu pronalaženja potencijalnih grešaka. Besplatno ga možete preuzeti sa \url{http://findbugs.sourceforge.net/.}} alata. Također dolazi sa integriranim alatom za dizajniranje GUI\footnote{\emph{Graphical User Interface} je tip sučelja pomoću kojega korisnik može vršiti interakciju sa električnim uređajima. Interakcija se vrši pomoću vizualnih kontrola kao što su ikone, dugmadi, prozori i slično.} (eng. \emph{Graphical User Interface}) aplikacija pomoću Matisse alata.
+
+NetBeans IDE je modularan, što znači da je dostupan veliki broj modula koji se mogu preuzeti te tako proširiti mogućnosti samoga NetBeans IDE alata. Dostupan je u više različitih paketa koji se mogu preuzeti sa \url{https://netbeans.org/downloads/}. Dakle, ako korisnik ima zadatak da razvija aplikaciju u C/C++ jeziku tada je u mogućnosti da preuzme NetBeans IDE koji je dolazi s podrškom samo za C/C++ okruženje. No, paketi se mogu i naknadno dodavati.
+
+Sam NetBeans IDE je zapravo pisan u Java programskom jeziku tako da je on onda dostupan za preuzimanje za sve veće platforme kao što su Microsoft Windows, GNU/Linux i Mac OS.
+
+Treba napomenuti da je NetBeans IDE \emph{open source} projekt kojeg razvija Oracle Corporation. Dakle, NetBeans IDE je službeni alat izdan od strane Oracle Corporation te ga se čak može i preuzeti integriranog s JDK.
+
+Slika~\ref{fig:netbeans_ide_overview} prikazuje editor izvornog kôda zajedno sa pregledom datoteka i direktorija koji sačinjavaju projekt. Također se može vidjeti i grafički pregled klase, tj. popis metoda i njihova vidljivost.
+
+\begin{figure}[h!]
+    \caption{NetBeans IDE glavno sučelje.}
+    \label{fig:netbeans_ide_overview}
+    \centering
+    \includegraphics[max width=\textwidth]{images/netbeans_ide_overview.png}
+\end{figure}
+
+Na slici~\ref{fig:netbeans_ide_gui_editor} se može vidjeti NetBeans IDE i njegov GUI editor. Omogućava da vizualno definirate sučelje umjesto da ga programirate u samom izvornom kôdu.
+
+\begin{figure}[h!]
+    \caption{NetBeans IDE GUI editor.}
+    \label{fig:netbeans_ide_gui_editor}
+    \centering
+    \includegraphics[max width=\textwidth]{images/netbeans_ide_gui_editor.png}
+\end{figure}
+
+Slika~\ref{fig:netbeans_ide_profiler} prikazuje \emph{profiler} dostupan unutar NetBeans IDE. Kao što se iz slike vide, programer može izmjeriti količinu potrošene memorije i procesora u nekom trenutku.
+
+\begin{figure}[h!]
+    \caption{NetBeans IDE \emph{profiler}.}
+    \label{fig:netbeans_ide_profiler}
+    \centering
+    \includegraphics[max width=\textwidth]{images/netbeans_ide_profiler.png}
+\end{figure}
+
+\subsubsection{Eclipse}
+Eclipse je, kao i NetBeans IDE, integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. Kao i NetBeans IDE, Eclipse je modularan no stupanj modularnosti je daleko veći. Podržava razvoj aplikacija u puno više programski jezika. Prema\cite{eclipsesoftware} podržava Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Natural, Perl, PHP, Prolog, R, Ruby, Scala, Clojure, Groovy, Scheme, Erlang, Python.
+
+Kao i kod NetBeans IDE, Eclipse podržava Apache Ant, Apache Maven, Apache Subversion, Mercurial, Git. Nažalost, podrška za Mercurial se mora naknadno instalirati putem modula. Naravno, dostupna je puna podrška za Java tehnologiju. \emph{Profiling} Java aplikacija isto tako se može naknadno instalirati. Kao i kod NetBeans IDE, dostupna je podrška za JUnit no integracija sa TestNG se mora naknadno instalirati. Podržava statičnu analizu izvornog kôda putem FindBugs alata no i ona se naknadno mora instalirati ako se želi koristiti. Ima podršku za dizajniranje GUI aplikacija no, kako to i biva, modul se mora naknadno instalirati.
+
+Kao što je i rečeno, Eclipse je modularan. No za razliku od NetBeans IDE, količina modula je daleko veća i kvalitetnija. Sam Eclipse je isto tako dostupan u paketima te se paketi isto tako mogu instalirati naknadno.
+
+\begin{infobox}
+    Količina i kvaliteta dostupnih modula je puno veća i bolja u odnosu na NetBeans IDE. Korisničko sučelje u Eclipse je \emph{task-oriented} te u nekom danom trenutku vam je dostupno samo ono što vas zanima te na takav način maksimalno sakriva kompleksnost posla. Eclipse je ujedno i preporuka autora ovog priručnika.
+\end{infobox}
+
+Eclipse je isto pisan u Java programskom jeziku te je izdan kao \emph{open source} projekt sponzoriran od strane IBM Corporation i dostupan je za besplatno preuzimanje sa \url{http://eclipse.org}.
+
+Ono što razdvaja NetBeans IDE i Eclipse je već spomenuta modularnost koja je na vrlo zavidnoj razini u korist Eclipse. Količina i kvaliteta modula je nemjerljiva u odnosu sa NetBeans IDE. Eclipse isto tako ima i bolje riješeno korisničko sučelje. No zamjerka je na tom naknadnom podešavanju, tj. instalaciji dodatnih modula koji su potrebni za razvoj Java aplikacija.
+
+Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogučnosti perspektiva. Slika to nemože prikazati no klikom na neku perspektivu, Eclipse će automatski prilagoditi svoje sučelje toj odabranoj perspektivi. Drugim riječima, ako korisnik odabere "\emph{CVS Repository Exploring}" tekst editor će se zatvoriti te će se pojaviti sučelje koje će prikazivati tablicu sa listom svih revizija vašeg izvornog kôda. Alatne trake će sada imati samo naredbe koje se tiču CVS alata, tj. naredbe za manipulaciju povijesti izvornog kôda.
+
+\begin{figure}[h!]
+    \caption{Eclipse i JavaEE perspektiva.}
+    \label{fig:eclipse_overview}
+    \centering
+    \includegraphics[max width=\textwidth]{images/eclipse_overview.png}
+\end{figure}
+
+\begin{infobox}
+    Autor ovog priručnika želi naglasiti da je poznavanje samog programskog jezika samo jedna od potrebnih znanja koja se moraju usvojiti da bi se uspješno obavljao posao. Postoji cijeli niz alata, tehnologija i procesa koje se jednostavno moraju usvojiti. No srećom, zato imate ovaj priručnik koji će vas uputiti i upoznati sa svijetom softverskog inženjerstva. Naravno da je znanje i količina informacija zapisana ovdje nije sveobuhvatna te morate ipak i sami istraživati i nalaziti nove tehnologije i načine riješavanja problema.
+\end{infobox}
+
+\section{Koncept klasa i objekata}
