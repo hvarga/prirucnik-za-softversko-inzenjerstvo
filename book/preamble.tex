@@ -34,3 +34,18 @@
     breakatwhitespace=true
     tabsize=4
 }
+\usepackage[most]{tcolorbox}
+\newtcolorbox{infobox} {
+    float,
+    breakable,
+    enhanced,
+    arc=2mm,
+    colback=yellow!30,
+    colframe=yellow!70!orange,
+    leftrule=12mm,
+    overlay={
+        \node[anchor=north west,outer sep=2pt] at (frame.north west) {
+            \includegraphics[width=8mm]{images/info.png}
+        };
+    }
+}

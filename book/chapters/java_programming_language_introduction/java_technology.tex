@@ -2,6 +2,7 @@ Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenu
 
 \section{Programski jezik Java}
 Slika~\ref{fig:software-development-process} prikazuje pregled procesa razvoja Java aplikacije.
+
 \begin{figure}[h!]
     \label{fig:software-development-process}
     \caption{Proces razvoja Java aplikacije.}
@@ -16,3 +17,11 @@ No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive 
 \begin{lstlisting}
 $ javac MyProgram.java
 \end{lstlisting}
+
+Nakon toga, pritiskom na tipku \texttt{Enter} će se pozvati Java prevoditelj, \texttt{javac}\footnote{\texttt{javac} i \texttt{java} su alati implementirani od strane Oracle Corporation. Oni su samo neki od alata koji se nalaze u JDK (\emph{Java Development Kit}) i JRE (\emph{Java Runtime Environment}) koji su dostupani za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/}.}, koji će onda prevesti \texttt{MyProgram.java} u Java \emph{bytecode}.
+
+Kao što je i rečeno, \texttt{.class} datoteke sadrže podatke koje su razumljive isključivo računalu za razliku od izvornog kôda koji je razumljiv isključivo programeru.
+
+\begin{infobox}
+    Nazivi datoteka koje sadržavaju izvorni kôd pisan u Java jeziku moraju završavati sa \texttt{.java}.
+\end{infobox}
