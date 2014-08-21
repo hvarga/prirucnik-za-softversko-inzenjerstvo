@@ -1,13 +1,13 @@
 Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java zapravo i programski jezik i platforma. Neke osnovne informacije o Java programskom jeziku i samoj Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
 
 \section{Programski jezik Java}
-Slika~\ref{fig:software-development-process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
+Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
 
 \begin{figure}[h!]
     \caption{Proces razvoja Java aplikacije.}
-    \label{fig:software-development-process}
+    \label{fig:software_development_process}
     \centering
-    \includegraphics[width=\textwidth]{images/software-development-process}
+    \includegraphics[width=\textwidth]{images/software_development_process}
 \end{figure}
 
 U Java programskom jeziku, izvorni kôd (eng. \emph{source code}) je pisan u tekstualnim datotekama. Nazivi tih datoteka završavaju sa .java.
@@ -43,13 +43,13 @@ Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM,
 java\footnote{Više o \texttt{java} alatu možete pročitati na fusnoti \ref{ftn:javaandjavac}.} je alat pomoću kojega možemo pokretati aplikacije pisane u Java programskom jeziku.
 
 \section{Java virtualna mašina}
-Java virtualna mašina je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java-platform-benefits}~\cite{javatutorials}.
+Java virtualna mašina je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java_platform_benefits}~\cite{javatutorials}.
 
 \begin{figure}[h!]
     \caption{Prednosti Java platforme.}
-    \label{fig:java-platform-benefits}
+    \label{fig:java_platform_benefits}
     \centering
-    \includegraphics[scale=0.6]{images/java-platform-benefits.png}
+    \includegraphics[scale=0.6]{images/java_platform_benefits.png}
 \end{figure}
 
 Slika zapravo prikazuje najveću prednost Java tehnologije nad drugim rješenjima. "Write once, run anywhere"~\cite{writeoncerunanywhere} je Sun Microsystem slogan koji ilustrira \emph{cross-platform} mogućnosti Java platforme.
@@ -80,13 +80,13 @@ Java platforma se sastoji od dva dijela:
     \item Aplikacijsko programsko sučelje (API)
 \end{itemize}
 
-Slika~\ref{fig:java-platform-layer-model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
+Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
 
 \begin{figure}[h!]
     \caption{Slojeviti model Java platforme.}
-    \label{fig:java-platform-layer-model}
+    \label{fig:java_platform_layer_model}
     \centering
-    \includegraphics[scale=0.6]{images/java-platform-layer-model.png}
+    \includegraphics[scale=0.6]{images/java_platform_layer_model.png}
 \end{figure}
 
 Java virtualnu mašinu smo već opisivali u prethodnom poglavlju pa ovdje nije potrebno ništa dodatno reći.
@@ -276,3 +276,54 @@ Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogučnosti perspektiva. Sl
 \end{infobox}
 
 \section{Koncept klasa i objekata}
+Teorija objektno orijentiranog programiranja je bila obrađena u poglavlju "Uvod u programiranje" tako da ćemo ovdje opisivati način na koji je objektno orijentirano programiranje implementirano u sam Java programski jezik.
+
+Java programski jezik je "pravi" objektno orijentirani programski jezik. Zašto "pravi"? Zato što je koncept objektno orijentiranog programiranja objedinjen u programski jezik Java, tj. sve u Javi je objekt. Primjerice, Python, PHP i C++ programski jezici u sebi imaju ugrađenu objektno orijentiranu paradigmu no oni vam ipak dozvoljavaju da istu i ne koristite. Dakle programer, u takvih programskim jezicima, za svoje potrebe može koristiti isključivo proceduranlnu paradigmu programiranja.
+
+Drugim riječima, da bi počeli objašnjavati programski jezik Java moramo ipak malo i proći kroz koncept objektno orijentiranog programiranja.
+
+\subsection{Objekti}
+Objekti su srce objektno orijentirane paradigme programiranja. Objekt je softverska komponenta koji ima svoje stanje i ponašanje, tj. funkcionalnost. Ako pogledamo ovaj naš stvarni svijet, vidjet ćemo mnogo primjera objekata; stolna svjetiljka, automobil, televizor, mikrovalna pećnica, itd.. I ako malo razmislimo, svaki taj objekt iz stvarnog svijeta ima svoje stanje i ponašanje.
+
+Televizor, primjerice, može biti uključen ili isključen. Može biti podešen da trenutno prikazuje signal s antene i da prikazuje HRT 2. Mikrovala pećnica, kada se podesi da zagrijava hranu, odbrojava do trenutka kada treba prestati zagrijavati. Dakle, to su sve nekakva stanja u kojem ti objekti mogu biti. Televizor i mikrovalna pećnica isto tako mogu imati i svoje ponašanje. Primjerice, televizor možete uključiti i isključiti, pojačati i stišati glasnoću. Mikrovalnoj pećnici možete "narediti" da odledi zaleđenu hranu ili da ispeče cijelo pile. Ono što je bitno za primijetiti je da ponašanje objekta zapravo mijenja njegovo stanje. Drugim riječima, nije isto ako hoćete da pećnica odleđuje hranu ili da ispeče pile; ovisno o odabiru parametri se mijenjaju. Pećnica će se, prema vašem odabiru, zapravo sebe "podesiti". Tj. odredit će snagu i vrijeme koje treba da obavi posao koji ste htjeli. Dakle još jednom - ovisno o odabranom ponašanju ili funkciji objekt će mijenjati svoja stanja.
+
+\begin{infobox}
+    Objekti imaju svoje stanje i ponašanje tj., funkcije.
+\end{infobox}
+
+U programskom jeziku Java objekti svoje stanje spremaju u varijable (eng. \emph{fields}), a svoje ponašanje definiraju pomoću funkcija ili metoda (eng. \emph{methods}). Objektom upravljamo pomoću definiranih metoda te na takav način objektu mijenjamo njegovo stanje.
+
+Slika~\ref{fig:object_conceptual_model} ispod prikazuju konceptualni model objekta.~\cite{javatutorials}
+
+\begin{figure}[h!]
+    \caption{Konceptualni model objekta.}
+    \label{fig:object_conceptual_model}
+    \centering
+    \includegraphics[scale=0.6]{images/object_conceptual_model.png}
+\end{figure}
+
+Vratimo se na primjer mikrovalne pećnice. Ako softverskim objektom komuniciramo pomoću njegovih metoda onda komunikaciju s mikrovalnom pećnicom obavljamo preko njezinih kontrola smještenih na kontrolnoj ploči koja se nalazi odmah pored vratašca. Ako malo bolje primijetimo, zapravo, ne postoji nijedan drugi način komunikacije sa pećnicom osim sa spomenutom kontrolnom pločom. Inženjeri, koji su osmislili tu mikrovalnu pećnicu, su vama dali samo nekoliko funkcija na korištenje. Dakle, vi kao korisnik te pećnice jedino trebate znati te ponuđene funkcije. Sve ostalo je od vas sakriveno u samom kućištu mikrovalne pećnice. Niti znate što je sve u tom kućištu niti vas i zanima. Vas jedino zanima tih par dugmeta na kontrolnoj ploči.
+
+Drugim riječima, inženjeri su sakrili kompleksnost same mikrovalne pećnice te vama tako olakšali posao. Ista analogija vrijedi i za softverske objekte. Dakle, programer objekta je ponudio vama na korištenje samo neki određeni set metoda. I jedino pomoću tih metoda vi zapravo možete upravljati tim objektom. Vas nezanima šta te metode onda konkretno rade. Bitno je da vi znate šta ćete postići korištenjem tih metoda.
+
+Drugim riječima, stanje objekta je zaštićeno pomoću tih metoda i na takav način objekt, zapravo, kontrolira kako će ga vanjski svijet koristiti. To načelu u objektno orijentiranoj paradigmi se naziva enkapsulacija (eng. \emph{encapsulation}).
+
+Primjer enkapsulacije je model~\cite{javatutorials} bicikla i njegova metoda \texttt{changeGears()}. Ako bicikl ima 18 brzina onda ta metoda može odbiti promijeniti brzinu ako je vrijednost koju pošaljemo objektu manja od 1 ili veća od 18. Inače bi taj objekt koji predstavlja bicikl zapravo doveli u inkonzistentno stanje.
+
+\begin{figure}[h!]
+    \caption{Konceptualni model bicikla.}
+    \label{fig:bicycle_conceptual_model}
+    \centering
+    \includegraphics[scale=0.6]{images/bicycle_conceptual_model.png}
+\end{figure}
+
+U stvarnom svijetu, aplikacije su nerijetko kompleksne te imaju na tisuće i tisuće objekata. Slika~\ref{fig:oop_system_abstract_overview} prikazuje apstraktni prikaz aplikacije koja koristi objekto orijentiranu paradigmu u svojem razvoju. Iz dijagrama se može vidjeti da se aplikacija sastoji od mnoštva objekata koji su povezani u logične cijeline te kao takvi komuniciraju jedno s drugim da bi obavili svoj zadatak za kojeg su i programirani.
+
+\begin{figure}[h!]
+    \caption{Apstraktni prikaz aplikacije koja koristi objekto orijentiranu paradigmu.}
+    \label{fig:oop_system_abstract_overview}
+    \centering
+    \includegraphics[max width=\textwidth]{images/oop_system_abstract_overview.png}
+\end{figure}
+
+Dakle, svaki taj objekt ima svoju ulogu u aplikaciji. Važno je da se cijela poslovna logika aplikacije koju razvijate podijeli u neke logične cijeline. Zatim da se za svaku logičnu cijelinu prepoznaju objekti koji će odraditi neki dio posla. U objekto orijentiranom programiranju je od najviše važnosti da se enkapsulacija svakog objekta drži na visokoj razini. Drugim riječima, najvažnije je da se sakriju detalji implementacije objekta te da se njegova stanja isključivo mogu mijenjati preko njegovih metoda.
