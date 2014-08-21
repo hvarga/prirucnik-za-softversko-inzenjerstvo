@@ -327,3 +327,72 @@ U stvarnom svijetu, aplikacije su nerijetko kompleksne te imaju na tisuće i tis
 \end{figure}
 
 Dakle, svaki taj objekt ima svoju ulogu u aplikaciji. Važno je da se cijela poslovna logika aplikacije koju razvijate podijeli u neke logične cijeline. Zatim da se za svaku logičnu cijelinu prepoznaju objekti koji će odraditi neki dio posla. U objekto orijentiranom programiranju je od najviše važnosti da se enkapsulacija svakog objekta drži na visokoj razini. Drugim riječima, najvažnije je da se sakriju detalji implementacije objekta te da se njegova stanja isključivo mogu mijenjati preko njegovih metoda.
+
+\subsection{Klase}
+Java je \emph{class-based} \cite{classbasedprogramming} programski jezik. U istu grupu spadaju i Python, PHP i C++ programski jezici. Dok primjerice JavaScript, Lua i Ruby, koji su također objektno orijentirani programski jezici, pripadaju u grupu \emph{prototype-based} \cite{prototypebasedprogramming} programskih jezika.
+
+Poznavanje gore dvije spomenute terminologije nije bitno; bitno je znati da u programskom jeziku Java, \emph{class-based} stil programiranja znači da je svaki objekt određen s klasom. Drugim riječima - ne postoji način da dobijete objekt ako nemate njegovu klasu.
+
+U stvarnom svijetu često ćete naići na objekte iste vrste; postoje na tisuće automobila koje su zapravo iste marke i modela. Svaki od tih automobila je napravljen od istog nacrta stoga su oni građeni od istih komponenti i imaju iste karakteristike i mogućnosti.
+
+U objektno orijentiranoj terminologiji mi kažemo da je svaki taj automobil instanca (eng. \emph{instance}) iste klase (eng. \emph{class}). Dakle, klasa je nacrt (eng. \emph{blueprint}) od koje se svaki objekt stvoren. Definicija klase određuje mogućnosti svakog objekta te klase.
+
+Sljedeći kôd predstavlja klasu i ona je jedna od mogućih implementacija bicikla:~\cite{javatutorials}
+
+\begin{lstlisting}[language=java]
+class Bicycle {
+    int cadence = 0;
+    int speed = 0;
+    int gear = 1;
+    
+    void changeCadence(int newValue) {
+        cadence = newValue;
+    }
+    
+    void changeGear(int newValue) {
+        gear = newValue;
+    }
+    
+    void speedUp(int increment) {
+        speed = speed + increment;
+    }
+    
+    void applyBrakes(int decrement) {
+        speed = speed - decrement;
+    }
+    
+    void printStates() {
+        System.out.println("cadence:" + cadence + " speed:" + speed + " gear:" + gear);
+    }
+}
+\end{lstlisting}
+
+Naravno da je, u ovom trenutku, kôd iznad totalno nepoznat. No promotrite dizajn te klase i prisjetite se što smo pričali u poglavlju prije. Svaki objekt ima svoja stanja i metode. U ovom slučaju, varijable \texttt{cadence}, \texttt{speed} i \texttt{gear} predstavljaju stanja objekta i \texttt{changeCadence()}, \texttt{changeGear()}, \texttt{speedUp()}, \texttt{applyBrakes()} i \texttt{printStates()} predstavljaju metode objekta.
+
+Kao što je i rečeno, da bi se koristila ta klasa vi morate od nje napraviti objekt. Dakle, morate napraviti instancu te klase. Sljedeći kôd predstavlja također jednu klasu koja zapravo koristi klasu \texttt{Bicycle}.~\cite{javatutorials}
+
+\begin{lstlisting}[language=java]
+class BicycleDriver {
+    public static void main(String[] args) {
+        // Create two different Bicycle objects
+        Bicycle bike1 = new Bicycle();
+        Bicycle bike2 = new Bicycle();
+        
+        // Invoke methods on those objects
+        bike1.changeCadence(50);
+        bike1.speedUp(10);
+        bike1.changeGear(2);
+        bike1.printStates();
+        
+        bike2.changeCadence(50);
+        bike2.speedUp(10);
+        bike2.changeGear(2);
+        bike2.changeCadence(40);
+        bike2.speedUp(10);
+        bike2.changeGear(3);
+        bike2.printStates();
+    }
+}
+\end{lstlisting}
+
+\section{Aplikacijsko programsko sučelje}
