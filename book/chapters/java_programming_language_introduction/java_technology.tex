@@ -1,6 +1,6 @@
 Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java zapravo i programski jezik i platforma. Neke osnovne informacije o Java programskom jeziku i samoj Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
 
-\section{Programski jezik Java}
+\section{Proces razvoja Java aplikacije}
 Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
 
 \begin{figure}[h!]
@@ -32,7 +32,7 @@ No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java pre
     Java aplikacija se sastoji od više \texttt{.class} datoteka grupiranih u direktorije.
 \end{infobox}
 
-JVM je ta komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. Tj. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
+JVM je ta komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
 
 Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM, moramo koristiti sljedeću naredbu u naredbenom retku:
 
@@ -166,7 +166,7 @@ Slike ~\ref{fig:geany} i ~\ref{fig:notepadpp} prikazuju tekst editore. Iako su t
 
 Naravno, lista iznad sadrži samo jedan mali set mogučnosti tekstualnih editora. No sva ta funkcionalnost je tu isključivo da olakša programeru njegov posao.
 
-No pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja.
+No pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja.
 
 \begin{figure}[h!]
     \caption{Geany.}
@@ -214,7 +214,7 @@ NetBeans IDE je integrirano razvojno okruženje korišteno primarno za razvoj ap
 
 Naravno, dolazi s punom podrškom za Java tehnologiju te je integriran sa \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jdb}. Ima ugrađeno podršku za \emph{profiling} Java aplikacija (NetBeans Profiler). Integriran je i sa alatima za testiranje kao što su JUnit\footnote{JUnit je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://junit.org/}.} i TestNG\footnote{TestNG je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Alternativa je JUnit alatu i dostupan je za besplatno preuzimanje sa \url{http://testng.org}.} te ima podršku za statičnu analizu izvornog kôda putem FindBugs\footnote{FindBugs je \emph{open source} alat koji je namjenjen za statičnu analizu izvornog kôda napisanog u Javi u svrhu pronalaženja potencijalnih grešaka. Besplatno ga možete preuzeti sa \url{http://findbugs.sourceforge.net/.}} alata. Također dolazi sa integriranim alatom za dizajniranje GUI\footnote{\emph{Graphical User Interface} je tip sučelja pomoću kojega korisnik može vršiti interakciju sa električnim uređajima. Interakcija se vrši pomoću vizualnih kontrola kao što su ikone, dugmadi, prozori i slično.} (eng. \emph{Graphical User Interface}) aplikacija pomoću Matisse alata.
 
-NetBeans IDE je modularan, što znači da je dostupan veliki broj modula koji se mogu preuzeti te tako proširiti mogućnosti samoga NetBeans IDE alata. Dostupan je u više različitih paketa koji se mogu preuzeti sa \url{https://netbeans.org/downloads/}. Dakle, ako korisnik ima zadatak da razvija aplikaciju u C/C++ jeziku tada je u mogućnosti da preuzme NetBeans IDE koji je dolazi s podrškom samo za C/C++ okruženje. No, paketi se mogu i naknadno dodavati.
+NetBeans IDE je modularan, što znači da je dostupan veliki broj modula koji se mogu preuzeti te tako proširiti mogućnosti samoga NetBeans IDE alata. Dostupan je u više različitih paketa koji se mogu preuzeti sa \url{https://netbeans.org/downloads/}. Dakle, ako korisnik ima zadatak da razvija aplikaciju u C/C++ jeziku tada je u mogućnosti da preuzme NetBeans IDE koji dolazi s podrškom samo za C/C++ okruženje. No, paketi se mogu i naknadno dodavati.
 
 Sam NetBeans IDE je zapravo pisan u Java programskom jeziku tako da je on onda dostupan za preuzimanje za sve veće platforme kao što su Microsoft Windows, GNU/Linux i Mac OS.
 
@@ -262,7 +262,7 @@ Eclipse je isto pisan u Java programskom jeziku te je izdan kao \emph{open sourc
 
 Ono što razdvaja NetBeans IDE i Eclipse je već spomenuta modularnost koja je na vrlo zavidnoj razini u korist Eclipse. Količina i kvaliteta modula je nemjerljiva u odnosu sa NetBeans IDE. Eclipse isto tako ima i bolje riješeno korisničko sučelje. No zamjerka je na tom naknadnom podešavanju, tj. instalaciji dodatnih modula koji su potrebni za razvoj Java aplikacija.
 
-Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogučnosti perspektiva. Slika to nemože prikazati no klikom na neku perspektivu, Eclipse će automatski prilagoditi svoje sučelje toj odabranoj perspektivi. Drugim riječima, ako korisnik odabere "\emph{CVS Repository Exploring}" tekst editor će se zatvoriti te će se pojaviti sučelje koje će prikazivati tablicu sa listom svih revizija vašeg izvornog kôda. Alatne trake će sada imati samo naredbe koje se tiču CVS alata, tj. naredbe za manipulaciju povijesti izvornog kôda.
+Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogućnosti perspektiva. Slika to ne može prikazati no klikom na neku perspektivu, Eclipse će automatski prilagoditi svoje sučelje toj odabranoj perspektivi. Drugim riječima, ako korisnik odabere "\emph{CVS Repository Exploring}" tekst editor će se zatvoriti i sučelje će sada prikazivati tablicu s listom svih revizija vašeg izvornog kôda. Alatne trake imat će samo naredbe koje se tiču CVS alata, tj. naredbe za manipulaciju povijesti izvornog kôda.
 
 \begin{figure}[h!]
     \caption{Eclipse i JavaEE perspektiva.}
@@ -272,20 +272,20 @@ Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogučnosti perspektiva. Sl
 \end{figure}
 
 \begin{infobox}
-    Autor ovog priručnika želi naglasiti da je poznavanje samog programskog jezika samo jedna od potrebnih znanja koja se moraju usvojiti da bi se uspješno obavljao posao. Postoji cijeli niz alata, tehnologija i procesa koje se jednostavno moraju usvojiti. No srećom, zato imate ovaj priručnik koji će vas uputiti i upoznati sa svijetom softverskog inženjerstva. Naravno da je znanje i količina informacija zapisana ovdje nije sveobuhvatna te morate ipak i sami istraživati i nalaziti nove tehnologije i načine riješavanja problema.
+    Autor ovog priručnika želi naglasiti da je poznavanje samog programskog jezika samo jedna od potrebnih znanja koja se moraju usvojiti da bi se uspješno obavljao posao. Postoji cijeli niz alata, tehnologija i procesa koje se jednostavno moraju usvojiti. No srećom, zato imate ovaj priručnik koji će vas uputiti i upoznati sa svijetom softverskog inženjerstva. Naravno da je znanje i količina informacija zapisana ovdje nije sveobuhvatna te morate ipak i sami istraživati i nalaziti nove tehnologije i načine rješavanja problema.
 \end{infobox}
 
 \section{Koncept klasa i objekata}
-Teorija objektno orijentiranog programiranja je bila obrađena u poglavlju "Uvod u programiranje" tako da ćemo ovdje opisivati način na koji je objektno orijentirano programiranje implementirano u sam Java programski jezik.
+Teorija objektno orijentiranog programiranja je bila obrađena u dijelu "Uvod u programiranje" tako da ćemo ovdje opisivati način na koji je objektno orijentirano programiranje implementirano u sam Java programski jezik.
 
-Java programski jezik je "pravi" objektno orijentirani programski jezik. Zašto "pravi"? Zato što je koncept objektno orijentiranog programiranja objedinjen u programski jezik Java, tj. sve u Javi je objekt. Primjerice, Python, PHP i C++ programski jezici u sebi imaju ugrađenu objektno orijentiranu paradigmu no oni vam ipak dozvoljavaju da istu i ne koristite. Dakle programer, u takvih programskim jezicima, za svoje potrebe može koristiti isključivo proceduranlnu paradigmu programiranja.
+Java programski jezik je "pravi" objektno orijentirani programski jezik. Zašto "pravi"? Zato što je koncept objektno orijentiranog programiranja objedinjen u programski jezik Java, tj. sve u Javi je objekt. Primjerice, Python, PHP i C++ programski jezici u sebi imaju ugrađenu objektno orijentiranu paradigmu no oni vam ipak dozvoljavaju da istu i ne koristite. Dakle programer, u takvih programskim jezicima, za svoje potrebe može koristiti isključivo proceduralnu paradigmu programiranja.
 
 Drugim riječima, da bi počeli objašnjavati programski jezik Java moramo ipak malo i proći kroz koncept objektno orijentiranog programiranja.
 
 \subsection{Objekti}
 Objekti su srce objektno orijentirane paradigme programiranja. Objekt je softverska komponenta koji ima svoje stanje i ponašanje, tj. funkcionalnost. Ako pogledamo ovaj naš stvarni svijet, vidjet ćemo mnogo primjera objekata; stolna svjetiljka, automobil, televizor, mikrovalna pećnica, itd.. I ako malo razmislimo, svaki taj objekt iz stvarnog svijeta ima svoje stanje i ponašanje.
 
-Televizor, primjerice, može biti uključen ili isključen. Može biti podešen da trenutno prikazuje signal s antene i da prikazuje HRT 2. Mikrovala pećnica, kada se podesi da zagrijava hranu, odbrojava do trenutka kada treba prestati zagrijavati. Dakle, to su sve nekakva stanja u kojem ti objekti mogu biti. Televizor i mikrovalna pećnica isto tako mogu imati i svoje ponašanje. Primjerice, televizor možete uključiti i isključiti, pojačati i stišati glasnoću. Mikrovalnoj pećnici možete "narediti" da odledi zaleđenu hranu ili da ispeče cijelo pile. Ono što je bitno za primijetiti je da ponašanje objekta zapravo mijenja njegovo stanje. Drugim riječima, nije isto ako hoćete da pećnica odleđuje hranu ili da ispeče pile; ovisno o odabiru parametri se mijenjaju. Pećnica će se, prema vašem odabiru, zapravo sebe "podesiti". Tj. odredit će snagu i vrijeme koje treba da obavi posao koji ste htjeli. Dakle još jednom - ovisno o odabranom ponašanju ili funkciji objekt će mijenjati svoja stanja.
+Televizor, primjerice, može biti uključen ili isključen. Može biti podešen da trenutno prikazuje signal s antene i da prikazuje HRT 2. Mikrovala pećnica, kada se podesi da zagrijava hranu, odbrojava do trenutka kada treba prestati zagrijavati. Dakle, to su sve nekakva stanja u kojima ti objekti mogu biti. Televizor i mikrovalna pećnica isto tako mogu imati i svoje ponašanje. Primjerice, televizor možete uključiti i isključiti, pojačati i stišati glasnoću. Mikrovalnoj pećnici možete "narediti" da odledi zaleđenu hranu ili da ispeče cijelo pile. Ono što je bitno za primijetiti je da ponašanje objekta zapravo mijenja njegovo stanje. Drugim riječima, nije isto ako hoćete da pećnica odleđuje hranu ili da ispeče pile; ovisno o odabiru parametri se mijenjaju. Pećnica će se, prema vašem odabiru, "sama podesiti". Odredit će snagu i vrijeme koje treba da obavi posao koji ste htjeli. Dakle još jednom - ovisno o odabranom ponašanju ili funkciji objekt će mijenjati svoja stanja.
 
 \begin{infobox}
     Objekti imaju svoje stanje i ponašanje tj., funkcije.
@@ -302,7 +302,7 @@ Slika~\ref{fig:object_conceptual_model} ispod prikazuju konceptualni model objek
     \includegraphics[scale=0.6]{images/object_conceptual_model.png}
 \end{figure}
 
-Vratimo se na primjer mikrovalne pećnice. Ako softverskim objektom komuniciramo pomoću njegovih metoda onda komunikaciju s mikrovalnom pećnicom obavljamo preko njezinih kontrola smještenih na kontrolnoj ploči koja se nalazi odmah pored vratašca. Ako malo bolje primijetimo, zapravo, ne postoji nijedan drugi način komunikacije sa pećnicom osim sa spomenutom kontrolnom pločom. Inženjeri, koji su osmislili tu mikrovalnu pećnicu, su vama dali samo nekoliko funkcija na korištenje. Dakle, vi kao korisnik te pećnice jedino trebate znati te ponuđene funkcije. Sve ostalo je od vas sakriveno u samom kućištu mikrovalne pećnice. Niti znate što je sve u tom kućištu niti vas i zanima. Vas jedino zanima tih par dugmeta na kontrolnoj ploči.
+Vratimo se na primjer mikrovalne pećnice. Ako softverskim objektom komuniciramo pomoću njegovih metoda onda komunikaciju s mikrovalnom pećnicom obavljamo preko njezinih kontrola smještenih na kontrolnoj ploči koja se nalazi odmah pored vratašca. Ako malo bolje primijetimo, zapravo, ne postoji nijedan drugi način komunikacije s pećnicom osim sa spomenutom kontrolnom pločom. Inženjeri, koji su osmislili tu mikrovalnu pećnicu, su vama dali samo nekoliko funkcija na korištenje. Dakle, vi kao korisnik pećnice jedino trebate znati ponuđene funkcije. Sve ostalo je od vas sakriveno u samom kućištu mikrovalne pećnice. Niti znate što je sve u tom kućištu niti vas i zanima. Vas jedino zanima tih par dugmeta na kontrolnoj ploči.
 
 Drugim riječima, inženjeri su sakrili kompleksnost same mikrovalne pećnice te vama tako olakšali posao. Ista analogija vrijedi i za softverske objekte. Dakle, programer objekta je ponudio vama na korištenje samo neki određeni set metoda. I jedino pomoću tih metoda vi zapravo možete upravljati tim objektom. Vas nezanima šta te metode onda konkretno rade. Bitno je da vi znate šta ćete postići korištenjem tih metoda.
 
@@ -317,7 +317,7 @@ Primjer enkapsulacije je model~\cite{javatutorials} bicikla i njegova metoda \te
     \includegraphics[scale=0.6]{images/bicycle_conceptual_model.png}
 \end{figure}
 
-U stvarnom svijetu, aplikacije su nerijetko kompleksne te imaju na tisuće i tisuće objekata. Slika~\ref{fig:oop_system_abstract_overview} prikazuje apstraktni prikaz aplikacije koja koristi objekto orijentiranu paradigmu u svojem razvoju. Iz dijagrama se može vidjeti da se aplikacija sastoji od mnoštva objekata koji su povezani u logične cijeline te kao takvi komuniciraju jedno s drugim da bi obavili svoj zadatak za kojeg su i programirani.
+U stvarnom svijetu, aplikacije su nerijetko kompleksne te imaju na tisuće i tisuće objekata. Slika~\ref{fig:oop_system_abstract_overview} prikazuje apstraktni prikaz aplikacije koja koristi objekto orijentiranu paradigmu u svojem razvoju. Iz slike se može vidjeti da se aplikacija sastoji od mnoštva objekata koji su povezani u logične cjeline te kao takvi komuniciraju jedno s drugim da bi obavili svoj zadatak za kojeg su i programirani.
 
 \begin{figure}[h!]
     \caption{Apstraktni prikaz aplikacije koja koristi objekto orijentiranu paradigmu.}
@@ -326,7 +326,7 @@ U stvarnom svijetu, aplikacije su nerijetko kompleksne te imaju na tisuće i tis
     \includegraphics[max width=\textwidth]{images/oop_system_abstract_overview.png}
 \end{figure}
 
-Dakle, svaki taj objekt ima svoju ulogu u aplikaciji. Važno je da se cijela poslovna logika aplikacije koju razvijate podijeli u neke logične cijeline. Zatim da se za svaku logičnu cijelinu prepoznaju objekti koji će odraditi neki dio posla. U objekto orijentiranom programiranju je od najviše važnosti da se enkapsulacija svakog objekta drži na visokoj razini. Drugim riječima, najvažnije je da se sakriju detalji implementacije objekta te da se njegova stanja isključivo mogu mijenjati preko njegovih metoda.
+Dakle, svaki taj objekt ima svoju ulogu u aplikaciji. Važno je da se cijela poslovna logika aplikacije koju razvijate podijeli u neke logične cjeline. Zatim da se za svaku logičnu cjelinu prepoznaju objekti koji će odraditi neki dio posla. U objekto orijentiranom programiranju je od najviše važnosti da se enkapsulacija svakog objekta drži na visokoj razini. Drugim riječima, najvažnije je da se sakriju detalji implementacije objekta te da se njegova stanja isključivo mogu mijenjati preko njegovih metoda.
 
 \subsection{Klase}
 Java je \emph{class-based} \cite{classbasedprogramming} programski jezik. U istu grupu spadaju i Python, PHP i C++ programski jezici. Dok primjerice JavaScript, Lua i Ruby, koji su također objektno orijentirani programski jezici, pripadaju u grupu \emph{prototype-based} \cite{prototypebasedprogramming} programskih jezika.
