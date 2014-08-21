@@ -1,4 +1,14 @@
-Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java zapravo i programski jezik i platforma. Neke osnovne informacije o Java programskom jeziku i samoj Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
+\begin{abstract}
+    Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java i platforma i programski jezik. Osnovne informacije o Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
+    
+    U ovom poglavlju ćemo objasniti proces tj. korake kojih se injženjer mora držati prilikom razvoja bilo koje Java aplikacije.
+    
+    Objasnit ćemo i Java platformu, njezinu ulogu i funkcionalnost koju nam ona nudi. Ovdje će biti naglasak na Java virtualnoj mašini - najbitnija komponenta u cijelokupnoj Java tehnologiji.
+    
+    Spomenuti ćemo i neke prednosti i mane same Java tehnologije. Cilj nije na detaljnoj elaboraciji nego na nekim bitnim stvarima koje mislimo da svaki injženjer mora znati prije nego se upusti u programiranje Java aplikacija.
+    
+    Za kraj poglavlja, izlistat ćemo potreban alat za razvoj Java aplikacija te i objasniti neke bitne funkcionalnosti svakog.
+\end{abstract}
 
 \section{Proces razvoja Java aplikacije}
 Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
@@ -42,7 +52,28 @@ Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM,
 
 java\footnote{Više o \texttt{java} alatu možete pročitati na fusnoti \ref{ftn:javaandjavac}.} je alat pomoću kojega možemo pokretati aplikacije pisane u Java programskom jeziku.
 
-\section{Java virtualna mašina}
+\section{Java platforma}
+Definicija platforme u softverskom inženjerstvu je svako hardversko ili softversko okruženje u kojem aplikacija \emph{živi}. Većina platformi se može opisati kao kombinacija hardvera i softvera. Primjerice, platforma HP BladeSystem se sastoji od hardvera proizvedenog od strane tvrtke Hewlett-Packard i softvera Red Hat Enterprise Linux koji pogoni taj hardver.
+
+No Java platforma se razlikuje od većine ostalih platformi po tome što je ona isključivo softversko rješenje koje se instalira na neku drugu platformu.
+
+Java platforma se sastoji od dva dijela:
+
+\begin{itemize}
+    \item Java virtualna mašina
+    \item Aplikacijsko programsko sučelje (API)
+\end{itemize}
+
+Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
+
+\begin{figure}[h!]
+    \caption{Slojeviti model Java platforme.}
+    \label{fig:java_platform_layer_model}
+    \centering
+    \includegraphics[scale=0.6]{images/java_platform_layer_model.png}
+\end{figure}
+
+\textbf{Java virtualna mašina}\\
 Java virtualna mašina je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java_platform_benefits}~\cite{javatutorials}.
 
 \begin{figure}[h!]
@@ -68,30 +99,10 @@ Zašto je to bitno, tj. koje su tu prednosti u odnosu na druga rješenja?
     \item Kupac, klijent ili korisnik vaše aplikacije može mijenjati arhitekturu i/ili operacijski sustav na kojem će se izvršavati aplikacija. Drugim riječima, ako je vaš \emph{codebase} vezan za arhitekturu ili operacijski sustav onda vi morate i prilagoditi vaš izvorni kôd da bi ste podržavali neku drugu, dodatnu arhitekturu ili operacijski sustav. Naravno da takav zahvat traži dodatno vrijeme i znanje i dodatne potencijalne probleme. Java tehnologija vas izolira od takvih problema.
 \end{itemize}
 
-\section{Java platforma}
-Definicija platforme u softverskom inženjerstvu je svako hardversko ili softversko okruženje u kojem aplikacija \emph{živi}. Većina platformi se može opisati kao kombinacija hardvera i softvera. Primjerice, platforma HP BladeSystem se sastoji od hardvera proizvedenog od strane tvrtke Hewlett-Packard i softvera Red Hat Enterprise Linux koji pogoni taj hardver.
-
-No Java platforma se razlikuje od većine ostalih platformi po tome što je ona isključivo softversko rješenje koje se instalira na neku drugu platformu.
-
-Java platforma se sastoji od dva dijela:
-
-\begin{itemize}
-    \item Java virtualna mašina
-    \item Aplikacijsko programsko sučelje (API)
-\end{itemize}
-
-Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
-
-\begin{figure}[h!]
-    \caption{Slojeviti model Java platforme.}
-    \label{fig:java_platform_layer_model}
-    \centering
-    \includegraphics[scale=0.6]{images/java_platform_layer_model.png}
-\end{figure}
-
-Java virtualnu mašinu smo već opisivali u prethodnom poglavlju pa ovdje nije potrebno ništa dodatno reći.
-
+\textbf{Java API}\\
 Java API predstavlja veliku kolekciju dostupnih softverskih komponenti te pružaju mnoge korisne mogućnosti koje se mogu koristiti u svakoj Java aplikaciji.
+
+Bitno je napomenuti da Java API službeno dolazi zajedno sa Java platformom. Dakle, nije potrebno ništa naknadno tražiti i preuzimati sa interneta.
 
 \begin{infobox}
     Java virtualna mašina i Java API izoliraju vašu aplikaciju od platforme na kojoj su instalirani.

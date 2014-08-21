@@ -57,3 +57,8 @@
 \bibliography{bibliography}
 \setcounter{tocdepth}{3}
 \usepackage[export]{adjustbox}
+
+\newenvironment{abstract} {
+    \section*{\centering \abstractname}
+    \begin{quotation}
+}{\end{quotation}}
