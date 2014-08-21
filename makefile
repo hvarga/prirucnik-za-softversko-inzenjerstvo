@@ -10,5 +10,5 @@ build:
 	
 	@echo "PDF file generated at `pwd`/book/prirucnik_za_softversko_inzenjerstvo.pdf."
 clean:
-	@find book | egrep "(current_commit.tex|*.aux$$|*.log$$|*.pdf$$|*.out$$|*.toc$$|*.lof$$|*.bbl$$|*.blg$$|*.xml$$|*blx.bib$$|*synctex.gz$$)" | xargs --no-run-if-empty rm
+	@find book | egrep "(current_commit.tex|*.aux$$|*.log$$|*.pdf$$|*.out$$|*.toc$$|*.lof$$|*.bbl$$|*.blg$$|*.xml$$|*blx.bib$$|*synctex.gz$$|*.lol$$)" | xargs --no-run-if-empty rm
 	@echo "Everything clean."

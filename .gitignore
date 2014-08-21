@@ -10,6 +10,7 @@
 *.blg
 *synctex.gz
 *.xml
+*.lol
 
 # Intermediat files
 current_commit.tex
