@@ -2,8 +2,8 @@ build:
 	@echo "Generating PDF file..."
 	@git log -1 --format=\\verb+%H+ > book/current_commit.tex
 	
-	@# We need to call pdflatex, bibtex and makeindex to generate all the data necessary to generate a PDF.
-	@cd book && latexmk -pdf main.tex
+	@# We need to call latexmk to generate all the data necessary to generate a PDF.
+	latexmk -verbose -time -pdf -cd book/main.tex
 	
 	@mv book/main.pdf book/prirucnik_za_softversko_inzenjerstvo.pdf
 	
