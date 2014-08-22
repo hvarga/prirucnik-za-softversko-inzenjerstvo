@@ -23,6 +23,7 @@
 *.glo
 *.gls
 *.ist
+*.bcf
 
 # Intermediate files
 current_commit.tex
