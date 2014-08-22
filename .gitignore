@@ -16,8 +16,15 @@
 *.ind
 *.fdb_latexmk
 *.fls
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
 
-# Intermediat files
+# Intermediate files
 current_commit.tex
 
 # Output files
