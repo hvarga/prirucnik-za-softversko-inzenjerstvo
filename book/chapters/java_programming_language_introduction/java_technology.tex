@@ -37,13 +37,13 @@ Kao što je i rečeno, \texttt{.class} datoteke sadrže podatke koje su razumlji
     Nazivi datoteka koje sadržavaju izvorni kôd pisan u Java jeziku moraju završavati sa \texttt{.java}.
 \end{infobox}
 
-No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java prevoditelj stvara razumljive računalu, no to nije sasvim istina. \texttt{.class} datoteke zapravo ne sadrže kôd kojeg procesor vašeg računala može razumjeti i izvršavati. Umjesto toga \texttt{.class} datoteke sadrže \emph{bytecode}\index{\emph{bytecode}} - jezik Java virtualne mašine (JVM).
+No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java prevoditelj stvara razumljive računalu, no to nije sasvim istina. \texttt{.class} datoteke zapravo ne sadrže kôd kojeg procesor vašeg računala može razumjeti i izvršavati. Umjesto toga \texttt{.class} datoteke sadrže \emph{bytecode}\index{\emph{bytecode}} - program koji upravlja sa \gls{jvm}.
 
 \begin{infobox}
     Java aplikacija se sastoji od više \texttt{.class} datoteka grupiranih u direktorije.
 \end{infobox}
 
-\acrshort{jvm} je ta komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
+\gls{jvm} je komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
 
 Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM, moramo koristiti sljedeću naredbu u naredbenom retku:
 
