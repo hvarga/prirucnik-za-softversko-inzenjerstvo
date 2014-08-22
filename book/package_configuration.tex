@@ -31,6 +31,7 @@
 }
 
 \newtcolorbox{infobox} {
+    floatplacement=htb
     float,
     breakable,
     enhanced,
@@ -38,7 +39,7 @@
     colback=yellow!30,
     colframe=yellow!70!orange,
     leftrule=12mm,
-    overlay={
+    overlay unbroken and first={
         \node[anchor=north west,outer sep=2pt] at (frame.north west) {
             \includegraphics[width=8mm]{images/info.png}
         };
