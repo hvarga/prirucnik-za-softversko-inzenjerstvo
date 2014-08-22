@@ -11,6 +11,9 @@
 *synctex.gz
 *.xml
 *.lol
+*.idx
+*.ilg
+*.ind
 
 # Intermediat files
 current_commit.tex
