@@ -14,6 +14,8 @@
 *.idx
 *.ilg
 *.ind
+*.fdb_latexmk
+*.fls
 
 # Intermediat files
 current_commit.tex
