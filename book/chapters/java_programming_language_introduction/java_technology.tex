@@ -1,6 +1,6 @@
 \label{chap:java_technology}
 \begin{abstract}
-    Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java i platforma i programski jezik. Osnovne informacije o Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
+    Prije nego što počnemo govoriti o samom programskom jeziku valjalo bi napomenuti da je Java i platforma\index{Java platforma} i programski jezik. Osnovne informacije o Java platformi je potrebno znati prije nego što se upustimo u programiranje Java aplikacija.
     
     U ovom poglavlju ćemo objasniti proces tj. korake kojih se injženjer mora držati prilikom razvoja bilo koje Java aplikacije.
     
@@ -21,15 +21,15 @@ Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja J
     \includegraphics[width=\textwidth]{images/software_development_process}
 \end{figure}
 
-U Java programskom jeziku, izvorni kôd (eng. \emph{source code}) je pisan u tekstualnim datotekama. Nazivi tih datoteka završavaju sa .java.
+U Java programskom jeziku, izvorni kôd (eng. \emph{source code}) je pisan u tekstualnim datotekama. Nazivi tih datoteka završavaju sa \texttt{.java}\index{\texttt{.java}}.
 
-No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive samom procesoru računala kojeg želimo isprogramirati. Taj problem rješava Java prevoditelj (eng. \emph{compiler}) koji će uzeti te datoteke koje su napisane od strane programera i prevesti ih u oblik razumljiv računalu. Dakle, za svaku datoteku koja sadrži izvorni kôd će napraviti po jednu dodatnu datoteku istog naziva samo drugačijeg završetka - \texttt{.class}. Drugim riječima, ako imamo datoteku naziva \texttt{MyProgram.java} tada će prevoditelj proizvesti datoteku naziva \texttt{MyProgram.class}. Postupak prevođenja datoteke koja sadrži izvorni kôd u datoteku koja sadrži Java \emph{bytecode} je opisan sljedećim primjerom: Ako postoji izvorni kôd napisan u \texttt{MyProgram.java} datoteci koju želimo prevesti u \texttt{MyProgram.class} datoteku koja sadrži Java \emph{bytecode} onda moramo u naredbenom retku upisati sljedeće:
+No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive samom procesoru računala kojeg želimo isprogramirati. Taj problem rješava Java prevoditelj (eng. \emph{compiler}) koji će uzeti te datoteke koje su napisane od strane programera i prevesti ih u oblik razumljiv računalu. Dakle, za svaku datoteku koja sadrži izvorni kôd će napraviti po jednu dodatnu datoteku istog naziva samo drugačijeg završetka - \texttt{.class}\index{\texttt{.class}}. Drugim riječima, ako imamo datoteku naziva \texttt{MyProgram.java} tada će prevoditelj\index{prevoditelj} proizvesti datoteku naziva \texttt{MyProgram.class}. Postupak prevođenja datoteke koja sadrži izvorni kôd u datoteku koja sadrži Java \emph{bytecode} je opisan sljedećim primjerom: Ako postoji izvorni kôd napisan u \texttt{MyProgram.java} datoteci koju želimo prevesti u \texttt{MyProgram.class} datoteku koja sadrži Java \emph{bytecode} onda moramo u naredbenom retku upisati sljedeće:
 
 \begin{lstlisting}
     $ javac MyProgram.java
 \end{lstlisting}
 
-Nakon toga, pritiskom na tipku \texttt{Enter} će se pozvati Java prevoditelj, \texttt{javac}\footnote{\label{ftn:javaandjavac}\texttt{javac} i \texttt{java} su alati implementirani od strane Oracle Corporation. Oni su samo neki od alata koji se nalaze u JDK (\emph{Java Development Kit}) i JRE (\emph{Java Runtime Environment}) koji su dostupani za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/}.}, koji će onda prevesti \texttt{MyProgram.java} u Java \emph{bytecode}.
+Nakon toga, pritiskom na tipku \texttt{Enter} će se pozvati Java prevoditelj, \texttt{javac}\index{\texttt{javac}|see {prevoditelj}}\footnote{\label{ftn:javaandjavac}\texttt{javac} i \texttt{java} su alati implementirani od strane Oracle Corporation. Oni su samo neki od alata koji se nalaze u JDK (\emph{Java Development Kit}) i JRE (\emph{Java Runtime Environment}) koji su dostupani za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/}.}, koji će onda prevesti \texttt{MyProgram.java} u Java \emph{bytecode}.
 
 Kao što je i rečeno, \texttt{.class} datoteke sadrže podatke koje su razumljive isključivo računalu za razliku od izvornog kôda koji je razumljiv isključivo programeru.
 
@@ -37,13 +37,13 @@ Kao što je i rečeno, \texttt{.class} datoteke sadrže podatke koje su razumlji
     Nazivi datoteka koje sadržavaju izvorni kôd pisan u Java jeziku moraju završavati sa \texttt{.java}.
 \end{infobox}
 
-No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java prevoditelj stvara razumljive računalu, no to nije sasvim istina. \texttt{.class} datoteke zapravo ne sadrže kôd kojeg procesor vašeg računala može razumjeti i izvršavati. Umjesto toga \texttt{.class} datoteke sadrže \emph{bytecode} - jezik Java virtualne mašine (JVM).
+No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java prevoditelj stvara razumljive računalu, no to nije sasvim istina. \texttt{.class} datoteke zapravo ne sadrže kôd kojeg procesor vašeg računala može razumjeti i izvršavati. Umjesto toga \texttt{.class} datoteke sadrže \emph{bytecode}\index{\emph{bytecode}} - jezik Java virtualne mašine (JVM).
 
 \begin{infobox}
     Java aplikacija se sastoji od više \texttt{.class} datoteka grupiranih u direktorije.
 \end{infobox}
 
-JVM je ta komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
+\acrshort{jvm} je ta komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
 
 Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM, moramo koristiti sljedeću naredbu u naredbenom retku:
 
