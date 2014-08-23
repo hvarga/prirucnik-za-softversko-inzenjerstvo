@@ -5,7 +5,7 @@
     
     U ovom poglavlju ćemo objasniti proces tj. korake kojih se injženjer mora držati prilikom razvoja bilo koje Java aplikacije.
     
-    Objasnit ćemo i Java platformu, njezinu ulogu i funkcionalnost koju nam ona nudi. Ovdje će biti naglasak na Java virtualnoj mašini - najbitnija komponenta u cijelokupnoj Java tehnologiji.
+    Objasnit ćemo i Java platformu, njezinu ulogu i funkcionalnost koju nam ona nudi. Ovdje će biti naglasak na Java virtualnoj mašini\index{Java virtualna mašina} - najbitnija komponenta u cijelokupnoj Java tehnologiji.
     
     Spomenuti ćemo i neke prednosti i mane same Java tehnologije. Cilj nije na detaljnoj elaboraciji nego na nekim bitnim stvarima koje mislimo da svaki injženjer mora znati prije nego se upusti u programiranje Java aplikacija.
     
@@ -24,18 +24,18 @@ Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja J
 
 U Java programskom jeziku, izvorni kôd (eng. \emph{source code}) je pisan u tekstualnim datotekama. Nazivi tih datoteka završavaju sa \texttt{.java}\index{\texttt{.java}}.
 
-No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive samom procesoru računala kojeg želimo isprogramirati. Taj problem rješava Java prevoditelj (eng. \emph{compiler}) koji će uzeti te datoteke koje su napisane od strane programera i prevesti ih u oblik razumljiv računalu. Dakle, za svaku datoteku koja sadrži izvorni kôd će napraviti po jednu dodatnu datoteku istog naziva samo drugačijeg završetka - \texttt{.class}\index{\texttt{.class}}. Drugim riječima, ako imamo datoteku naziva \texttt{MyProgram.java} tada će prevoditelj\index{prevoditelj} proizvesti datoteku naziva \texttt{MyProgram.class}. Postupak prevođenja datoteke koja sadrži izvorni kôd u datoteku koja sadrži Java \emph{bytecode} je opisan sljedećim primjerom: Ako postoji izvorni kôd napisan u \texttt{MyProgram.java} datoteci koju želimo prevesti u \texttt{MyProgram.class} datoteku koja sadrži Java \emph{bytecode} onda moramo u naredbenom retku upisati sljedeće:
+No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive samom procesoru računala kojeg želimo isprogramirati. Taj problem rješava Java prevoditelj\index{prevoditelj} (eng. \emph{compiler}\index{\emph{compiler}|see {prevoditelj}}) koji će uzeti te datoteke koje su napisane od strane programera i prevesti ih u oblik razumljiv računalu. Dakle, za svaku datoteku koja sadrži izvorni kôd će napraviti po jednu dodatnu datoteku istog naziva samo drugačijeg završetka - \texttt{.class}\index{\texttt{.class}}. Drugim riječima, ako imamo datoteku naziva \texttt{MyProgram.java} tada će prevoditelj\index{prevoditelj} proizvesti datoteku naziva \texttt{MyProgram.class}. Postupak prevođenja datoteke koja sadrži izvorni kôd u datoteku koja sadrži Java \emph{bytecode} je opisan sljedećim primjerom: Ako postoji izvorni kôd napisan u \texttt{MyProgram.java} datoteci koju želimo prevesti u \texttt{MyProgram.class} datoteku koja sadrži Java \emph{bytecode} onda moramo u naredbenom retku upisati sljedeće:
 
 \begin{lstlisting}
     $ javac MyProgram.java
 \end{lstlisting}
 
-Nakon toga, pritiskom na tipku \texttt{Enter} će se pozvati Java prevoditelj, \texttt{javac}\index{\texttt{javac}|see {prevoditelj}}\footnote{\label{ftn:javaandjavac}\texttt{javac} i \texttt{java} su alati implementirani od strane Oracle Corporation. Oni su samo neki od alata koji se nalaze u JDK (\emph{Java Development Kit}) i JRE (\emph{Java Runtime Environment}) koji su dostupani za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/}.}, koji će onda prevesti \texttt{MyProgram.java} u Java \emph{bytecode}.
+Nakon toga, pritiskom na tipku \texttt{Enter} će se pozvati Java prevoditelj\index{prevoditelj}, \texttt{javac}\index{\texttt{javac}|see {prevoditelj}}\footnote{\label{ftn:javaandjavac}\texttt{javac} i \texttt{java} su alati implementirani od strane Oracle Corporation. Oni su samo neki od alata koji se nalaze u JDK (\emph{Java Development Kit}) i JRE (\emph{Java Runtime Environment}) koji su dostupani za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/}.}, koji će onda prevesti \texttt{MyProgram.java} u Java \emph{bytecode}.
 
 Kao što je i rečeno, \texttt{.class} datoteke sadrže podatke koje su razumljive isključivo računalu za razliku od izvornog kôda koji je razumljiv isključivo programeru.
 
 \begin{infobox}
-    Nazivi datoteka koje sadržavaju izvorni kôd pisan u Java jeziku moraju završavati sa \texttt{.java}.
+    Nazivi datoteka koje sadržavaju izvorni kôd pisan u Java jeziku moraju završavati sa \texttt{.java}\index{\texttt{.java}}.
 \end{infobox}
 
 No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java prevoditelj stvara razumljive računalu, no to nije sasvim istina. \texttt{.class} datoteke zapravo ne sadrže kôd kojeg procesor vašeg računala može razumjeti i izvršavati. Umjesto toga \texttt{.class} datoteke sadrže \emph{bytecode}\index{\emph{bytecode}} - program koji upravlja sa \gls{jvm}.
@@ -44,9 +44,9 @@ No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java pre
     Java aplikacija se sastoji od više \texttt{.class} datoteka grupiranih u direktorije.
 \end{infobox}
 
-\gls{jvm} je komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. JVM se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
+\gls{jvm}\index{Java virtualna mašina} je komponenta koja zna čitati \texttt{.class} datoteke i izvršavati njih. \gls{jvm} se pokreće kada se želi izvršavati aplikacija pisana u Java programskom jeziku, čita \texttt{.class} datoteke koje čine tu aplikaciju te iz njih zapravo stvara strojni kôd (eng. \emph{native code}) pomoću kojeg se onda upravlja procesorom.
 
-Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću JVM, moramo koristiti sljedeću naredbu u naredbenom retku:
+Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću \gls{jvm}, moramo koristiti sljedeću naredbu u naredbenom retku:
 
 \begin{lstlisting}
     $ java MyProgram
@@ -56,18 +56,18 @@ java\footnote{Više o \texttt{java} alatu možete pročitati na fusnoti \ref{ftn
 
 \section{Java platforma}
 \label{sec:java_platform}
-Definicija platforme u softverskom inženjerstvu je svako hardversko ili softversko okruženje u kojem aplikacija \emph{živi}. Većina platformi se može opisati kao kombinacija hardvera i softvera. Primjerice, platforma HP BladeSystem se sastoji od hardvera proizvedenog od strane tvrtke Hewlett-Packard i softvera Red Hat Enterprise Linux koji pogoni taj hardver.
+Definicija platforme\index{platforma} u softverskom inženjerstvu je svako hardversko ili softversko okruženje u kojem aplikacija \emph{živi}. Većina platformi se može opisati kao kombinacija hardvera i softvera. Primjerice, platforma HP BladeSystem se sastoji od hardvera proizvedenog od strane tvrtke Hewlett-Packard i softvera Red Hat Enterprise Linux koji pogoni taj hardver.
 
-No Java platforma se razlikuje od većine ostalih platformi po tome što je ona isključivo softversko rješenje koje se instalira na neku drugu platformu.
+No Java platforma\index{Java platforma} se razlikuje od većine ostalih platformi po tome što je ona isključivo softversko rješenje koje se instalira na neku drugu platformu.
 
-Java platforma se sastoji od dva dijela:
+Java platforma\index{Java platforma} se sastoji od dva dijela:
 
 \begin{itemize}
     \item Java virtualna mašina
     \item Aplikacijsko programsko sučelje (API)
 \end{itemize}
 
-Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme.~\cite{javatutorials}
+Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme\index{Java platforma}.~\cite{javatutorials}
 
 \begin{figure}[!htbp]
     \caption{Slojeviti model Java platforme.}
@@ -77,7 +77,7 @@ Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java
 \end{figure}
 
 \textbf{Java virtualna mašina}\\
-Java virtualna mašina je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java_platform_benefits}~\cite{javatutorials}.
+Java virtualna mašina\index{Java virtualna mašina} je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java_platform_benefits}~\cite{javatutorials}.
 
 \begin{figure}[!htbp]
     \caption{Prednosti Java platforme.}
@@ -95,26 +95,26 @@ Ono što je isto tako bitno naglasiti je to da se izvorni kôd može prevesti na
 Zašto je to bitno, tj. koje su tu prednosti u odnosu na druga rješenja?
 
 \begin{itemize}
-    \item Programeri održavaju samo jedan \emph{codebase}\footnote{Termin codebase predstavlja jednu cijelu kolekciju izvornog kôda koji sačinjava aplikaciju. Kada se kaže da neka aplikacija ili projekt ima \emph{multiple codebases} ili više kolekcija izvornog kôda to znači da je svaka kolekcija jedna nezavisna implementacija te aplikacije ili projekta. Primjerice, planetarno popularna aplikacija \emph{Skype} zapravo ima više nezavisnih implementacija - Android, Windows Phone, iPhone itd.}. To znači da je puno manji broj grešaka u aplikaciji, te da se greške lakše ispravljaju.
+    \item Programeri održavaju samo jedan \emph{codebase}\footnote{Termin \emph{codebase}\index{\emph{codebase}} predstavlja jednu cijelu kolekciju izvornog kôda koji sačinjava aplikaciju. Kada se kaže da neka aplikacija ili projekt ima \emph{multiple codebases} ili više kolekcija izvornog kôda to znači da je svaka kolekcija jedna nezavisna implementacija te aplikacije ili projekta. Primjerice, planetarno popularna aplikacija \emph{Skype} zapravo ima više nezavisnih implementacija - Android, Windows Phone, iPhone itd.}. To znači da je puno manji broj grešaka u aplikaciji, te da se greške lakše ispravljaju.
     
-    \item Prevođenje izvornog kôda za konkretnu platformu i cross-compiling\footnote{\emph{Cross-compiling} je proces koji omogućava da prevodite izvorni kôd za platformu različitu od one na kojem je taj prevoditelj instaliran. Primjerice, \emph{cross compiler} je potreban za prevođenje izvornog kôda za nekakav ugrađeni sustav (eng. \emph{embedded system}) ili mikrokontroler zato što takvi uređaji nemaju operacijski sustav.} uopće više nije ni potreban. Dakle, prevodite izvorni kôd na bilo kojoj platformi da bi se izvršavao na bilo kojoj platformi. To znači da je distribucija vaše aplikacije puno brža u odnosu na druga riješenja.
+    \item Prevođenje izvornog kôda za konkretnu platformu i \emph{cross-compiling}\footnote{\emph{Cross-compiling}\index{\emph{Cross-compiling}} je proces koji omogućava da prevodite izvorni kôd za platformu različitu od one na kojem je taj prevoditelj instaliran. Primjerice, \emph{cross compiler} je potreban za prevođenje izvornog kôda za nekakav ugrađeni sustav (eng. \emph{embedded system}) ili mikrokontroler zato što takvi uređaji nemaju operacijski sustav.} uopće više nije ni potreban. Dakle, prevodite izvorni kôd na bilo kojoj platformi da bi se izvršavao na bilo kojoj platformi. To znači da je distribucija vaše aplikacije puno brža u odnosu na druga riješenja.
     
-    \item Kupac, klijent ili korisnik vaše aplikacije može mijenjati arhitekturu i/ili operacijski sustav na kojem će se izvršavati aplikacija. Drugim riječima, ako je vaš \emph{codebase} vezan za arhitekturu ili operacijski sustav onda vi morate i prilagoditi vaš izvorni kôd da bi ste podržavali neku drugu, dodatnu arhitekturu ili operacijski sustav. Naravno da takav zahvat traži dodatno vrijeme i znanje i dodatne potencijalne probleme. Java tehnologija vas izolira od takvih problema.
+    \item Kupac, klijent ili korisnik vaše aplikacije može mijenjati arhitekturu i/ili operacijski sustav na kojem će se izvršavati aplikacija. Drugim riječima, ako je vaš \emph{codebase} vezan za arhitekturu ili operacijski sustav onda vi morate i prilagoditi vaš izvorni kôd da bi ste podržavali neku drugu, dodatnu arhitekturu ili operacijski sustav. Naravno da takav zahvat traži dodatno vrijeme i znanje te unosi dodatne potencijalne probleme. Java tehnologija vas izolira od takvih problema.
 \end{itemize}
 
 \textbf{Java API}\\
-Java API predstavlja veliku kolekciju dostupnih softverskih komponenti te pružaju mnoge korisne mogućnosti koje se mogu koristiti u svakoj Java aplikaciji.
+Java API\index{Java API} predstavlja veliku kolekciju dostupnih softverskih komponenti te pružaju mnoge korisne mogućnosti koje se mogu koristiti u svakoj Java aplikaciji.
 
-Bitno je napomenuti da Java API službeno dolazi zajedno sa Java platformom. Dakle, nije potrebno ništa naknadno tražiti i preuzimati sa interneta.
+Bitno je napomenuti da Java API\index{Java API} službeno dolazi zajedno sa Java platformom. Dakle, nije potrebno ništa naknadno tražiti i preuzimati sa interneta.
 
 \begin{infobox}
-    Java virtualna mašina i Java API izoliraju vašu aplikaciju od platforme na kojoj su instalirani.
+    Java virtualna mašina\index{Java virtualna mašina} i Java API\index{Java API} izoliraju vašu aplikaciju od platforme na kojoj su instalirani.
 \end{infobox}
 
 \section{Prednosti i mane Java tehnologije}
-U prethodnom poglavlju je rečeno da je Java virtualna mašina komponenta zaslužna za pokretanje, izvršavanje i upravljanje Java aplikacijom. Ta činjenica je ujedno i prednost i najveći nedostatak.
+U prethodnom poglavlju je rečeno da je \gls{jvm}\index{Java virtualna mašina} komponenta zaslužna za pokretanje, izvršavanje i upravljanje Java aplikacijom. Ta činjenica je ujedno i prednost i najveći nedostatak.
 
-Naime, Java virtualna mašina utječe na performanse Java aplikacije. Drugim riječima, performanse i same mogućnosti nativne\footnote{Nativna aplikacija (eng. \emph{native application}) je aplikacija koja je pisana za specifičnu platformu ili uređaj.} aplikacije su uvijek veće nego kod Java aplikacije.
+Naime, Java virtualna mašina utječe na performanse Java aplikacije. Drugim riječima, performanse i same mogućnosti nativne\footnote{Nativna aplikacija\index{Nativna aplikacija} (eng. \emph{native application}) je aplikacija koja je pisana za specifičnu platformu ili uređaj.} aplikacije su uvijek veće nego kod Java aplikacije.
 
 No prednosti koje dobivate sa Java tehnologijom su daleko veće tako da je taj nedostatak čak nekad i zanemariv. Zašto? Zato što sa Java tehnologijom dobivate sljedeće:
 
@@ -144,30 +144,30 @@ Java programski jezik također ima i neke svoje osobine koje je bitno znati:
 Za razvoj Java aplikacija minimalno je potrebno sljedeće:
 
 \begin{itemize}
-    \item JDK (\emph{Java Development Kit})
+    \item \gls{jdk}
     \item Tekst editor
 \end{itemize}
 
-\subsection{JDK}
-JDK je razvojno okruženje za izradu Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/javase/downloads}.
+\subsection{\acrshort{jdk}}
+\gls{jdk}\index{JDK} je razvojno okruženje za izradu Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://www.oracle.com/technetwork/java/javase/downloads}.
 
 \begin{infobox}
-    JDK sadrži sve potrebne komponente za razvoj Java aplikacija. Tu su i alati za prevođenje i pokretanje Java aplikacija, alat za generiranje dokumentacije pisane u samom izvornom kôdu, alati za distribuciju Java aplikacija, alat za debugging\footnote{\emph{Debugging} je process nalaženja i ispravljanja grešaka koji su nastali prilikom razvoja softvera ili hardvera. Konkretno kada govorimo o Java tehnologiji, postoji alat (\texttt{jdb}) koji omogućuje programeru Java aplikacije da, zapravo, pauzira izvršavanje aplikacije u nekoj proizvoljnoj točci tj. liniji izvornog kôda. U tom trenutku, kada se izvršavanje aplikacije pauzira, programer ima na uvid o stanju svake varijable tj. njihove vrijednosti. Nadalje, programer je sada u mogućnosti da kontolira izvršavanje programa korak po korak te tako prati mijenjanje stanja variabli i kontrolira tijek izvršavanja.} te razni alati za profiling\footnote{U softverskom injženjerstvu, \emph{profiling} je forma dinamičke programske analize pomoću koje možemo napraviti različita mjerenja. Mjerenja mogu uključivati zauzeće memorije, vremensku kompleksnost aplikacije, frekvencija korištenja nekih djelova izvornog kôda. \emph{Profiling} se najčešće koristi za potrebe optimizacije aplikacije.} Java aplikacija.
+    JDK\index{JDK} sadrži sve potrebne komponente za razvoj Java aplikacija. Tu su i alati za prevođenje i pokretanje Java aplikacija, alat za generiranje dokumentacije pisane u samom izvornom kôdu, alati za distribuciju Java aplikacija, alat za \emph{debugging}\footnote{\emph{Debugging}\index{\emph{debugging}} je process nalaženja i ispravljanja grešaka koji su nastali prilikom razvoja softvera ili hardvera. Konkretno kada govorimo o Java tehnologiji, postoji alat (\texttt{jdb}\index{\texttt{jdb}}) koji omogućuje programeru Java aplikacije da pauzira izvršavanje aplikacije u nekoj proizvoljnoj točci tj. liniji izvornog kôda. U tom trenutku, kada se izvršavanje aplikacije pauzira, programer ima na uvid o stanju svake varijable tj. njihove vrijednosti. Nadalje, programer je sada u mogućnosti da kontolira izvršavanje programa korak po korak te tako prati mijenjanje stanja variabli i kontrolira tijek izvršavanja.} te razni alati za \emph{profiling}\footnote{U softverskom injženjerstvu, \emph{profiling}\index{\emph{profiling}} je forma dinamičke programske analize pomoću koje možemo napraviti različita mjerenja. Mjerenja mogu uključivati zauzeće memorije, vremensku kompleksnost aplikacije, frekvencija korištenja nekih djelova izvornog kôda. \emph{Profiling}\index{\emph{profiling}} se najčešće koristi za potrebe optimizacije aplikacije.} Java aplikacija.
 \end{infobox}
 
-Neke od komponenti od kojeg se JDK sastoji su:
+Neke od komponenti od kojeg se \gls{jdk} sastoji su:
 
 \begin{itemize}
-    \item Razvojni alati za razne namjene. Među tim alatima su i \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jar}, \texttt{jdb}, \texttt{VisualVM}.
-    \item JRE (\emph{Java Runtime Environment})
-    \item Izvorni kôd osnovnog Java API-a
+    \item Razvojni alati za razne namjene. Među tim alatima su i \texttt{javac}\index{\texttt{javac}}, \texttt{java}\index{\texttt{java}}, \texttt{javadoc}\index{\texttt{javadoc}}, \texttt{jar}\index{\texttt{jarc}}, \texttt{jdb}\index{\texttt{jdb}}, VisualVM\index{VisualVM}.
+    \item \gls{jre}
+    \item Izvorni kôd osnovnog Java API-a\index{Java API}
 \end{itemize}
 
 \subsection{Tekstualni editor}
-Tekstualni editor je potreban za pisanje izvornog kôda u Java programskom jeziku. Iako dolazi sa svakim operacijskim sustavom, za početnike se ipak preporučuje da se koristi Notepad++ ako koristite Microsoft Windows operacijski sustav ili Geany ako koristiti GNU/Linux.
+Tekstualni editor je potreban za pisanje izvornog kôda u Java programskom jeziku. Iako dolazi sa svakim operacijskim sustavom, za početnike se ipak preporučuje da se koristi Notepad++\index{Notepad++} ako koristite Microsoft Windows operacijski sustav ili Geany\index{Geany} ako koristiti GNU/Linux.
 
 \begin{infobox}
-    Početnicima se preporučuje da koriste Geany ili Notepad++.
+    Početnicima se preporučuje da koriste Geany\index{Geany} ili Notepad++\index{Notepad++}.
 \end{infobox}
 
 Slike ~\ref{fig:geany} i ~\ref{fig:notepadpp} prikazuju tekst editore. Iako su to dvije različite aplikacije one zapravo imaju slične funkcionalnosti kao što su:
@@ -180,7 +180,7 @@ Slike ~\ref{fig:geany} i ~\ref{fig:notepadpp} prikazuju tekst editore. Iako su t
 
 Naravno, lista iznad sadrži samo jedan mali set mogučnosti tekstualnih editora. No sva ta funkcionalnost je tu isključivo da olakša programeru njegov posao.
 
-No pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja.
+Pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja\index{integrirano razvojno okruženje}.
 
 \begin{figure}[!htbp]
     \caption{Geany.}
@@ -196,7 +196,7 @@ No pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša a
 \end{figure}
 
 \subsection{Integrirano razvojno okruženje}
-IDE (eng. \emph{Integrated Development Environment}) ili integrirano razvojno okruženje je softverski paket koji softverskim inženjerima pruža veliku paletu mogućnosti na jednom mjestu, tj. pod jednim korisničkim sučeljem. Tipično se sastoji od sljedećeg:
+\gls{ide} ili integrirano razvojno okruženje\index{integrirano razvojno okruženje} je softverski paket koji softverskim inženjerima pruža veliku paletu mogućnosti na jednom mjestu, tj. pod jednim korisničkim sučeljem. Tipično se sastoji od sljedećeg:
 
 \begin{itemize}
     \item tekstualni editor,
@@ -212,27 +212,27 @@ IDE (eng. \emph{Integrated Development Environment}) ili integrirano razvojno ok
 Kao i kod tekstualnih editora, lista iznad nije konačna te zavisi koji softverski paket se koristi.
 
 \begin{infobox}
-    Integrirana razvojna okruženja integriraju većinu alata i procesa koji su potrebni prilikom razvoja softvera pod jednim unificiranim korisničkim sučeljem. Time povećavaju produktivnost softverskom inženjeru smanjujući repetitivnost i manualni rad. Integrirana razvojna okruženja imaju i dublju semantiku tako da softverski inženjeri imaju bolji pregled nad izvornim kôdom te je i s time olakšano njegovo pisanje.
+    Integrirana razvojna okruženja\index{integrirano razvojno okruženje} integriraju većinu alata i procesa koji su potrebni prilikom razvoja softvera pod jednim unificiranim korisničkim sučeljem. Time povećavaju produktivnost softverskom inženjeru smanjujući repetitivnost i manualni rad. Integrirana razvojna okruženja imaju i dublju semantiku tako da softverski inženjeri imaju bolji pregled nad izvornim kôdom te je i s time olakšano njegovo pisanje.
 \end{infobox}
 
 Prednosti integriranog razvojnog okruženja su očigledne. Dosad ste, čitajući ovaj priručnik, vjerojatno dobili dojam da je Java tehnologija kompleksna i heterogena. I u pravu ste; sastoji se od mnoštvo komponenti koji su zapravo vezani jedno za drugo. Isto tako, postoji mnoštvo alata bez kojih se ne može razvijati Java aplikacija. No to nisu jedini alati s kojima se softverski inženjer služi svakodnevno za obavljanje svog posla. A pravi dojam će se steći tek kasnije kada se vaša aplikacija mora integrirati u nekakav drugi sustav. Integrirano razvojno okruženje sakriva tu kompleksnost do neke granice te vam omogućava da se usredotočite na ono najvažnije, a to je razvoj softvera.
 
-Srećom, postoji nekoliko integriranih razvojnih okruženja za Java tehnologiju. No mi ćemo ovdje spomenuti samo dva; NetBeans IDE i Eclipse.
+Srećom, postoji nekoliko integriranih razvojnih okruženja za Java tehnologiju. No mi ćemo ovdje spomenuti samo dva; NetBeans IDE\index{NetBeans IDE} i Eclipse\index{Eclipse}.
 
 \subsubsection{NetBeans IDE}
-NetBeans IDE je integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. No podržava i razvoj aplikacija u PHP i C/C++ programskim jezicima. Podržava Apache Ant\footnote{Jedna od najčešćih primjena Apache Ant alata je za izradu distribucije Java aplikacije. No, alat ima puno veće i širje mogučnosti. Detaljne informacije možete dobiti na \url{http://ant.apache.org/}. Alat je \emph{open source} te ga sa istog linka možete i besplatno preuzeti.} i Apache Maven\footnote{Apache Maven je jedna od alternativa Apache Ant alatu. No Apache Maven je usko vezan za Java tehnologiju; koristi se isljučivo na Java baziranim projektima. Kao i Apache Ant, Apache Maven je isto \emph{open source} projekt. Besplatno preuzimanje i više informacija o njemu možete naći na \url{http://maven.apache.org/}.} te razne alate za verzioniranje izvornog kôda kao što su Apache Subversion\footnote{Apache Subversion je alat za verzioniranje izvornog kôda. Kao i ostali alati iz Apache Foundation, Apache Subversion je \emph{open source} te se besplatno može preuzeti sa \url{http://subversion.apache.org/}.}, Mercurial\footnote{Mercurial je \emph{open source} alat za verzioniranje izvornog kôda. Besplatno preuzimanje je moguće sa \url{http://mercurial.selenic.com/}.} i Git\footnote{Git je \emph{open source} alat za verzioniranje izvornog kôda napisan od strane Linus Torvaldsa - čovjeka odgovornog za razvoj Linux projekta. Besplatno preuzimanje je moguće sa \url{http://git-scm.com/}.}.
+NetBeans IDE\index{NetBeans IDE} je integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. No podržava i razvoj aplikacija u PHP i C/C++ programskim jezicima. Podržava Apache Ant\footnote{Jedna od najčešćih primjena Apache Ant\index{Apache Ant} alata je za izradu distribucije Java aplikacije. No, alat ima puno veće i širje mogučnosti. Detaljne informacije možete dobiti na \url{http://ant.apache.org/}. Alat je \emph{open source} te ga sa istog linka možete i besplatno preuzeti.} i Apache Maven\footnote{Apache Maven\index{Apache Maven} je jedna od alternativa Apache Ant alatu. No Apache Maven je usko vezan za Java tehnologiju; koristi se isljučivo na Java baziranim projektima. Kao i Apache Ant, Apache Maven je isto \emph{open source} projekt. Besplatno preuzimanje i više informacija o njemu možete naći na \url{http://maven.apache.org/}.} te razne alate za verzioniranje izvornog kôda kao što su Apache Subversion\footnote{Apache Subversion\index{Apache Subversion} je alat za verzioniranje izvornog kôda. Kao i ostali alati iz Apache Foundation, Apache Subversion je \emph{open source} te se besplatno može preuzeti sa \url{http://subversion.apache.org/}.}, Mercurial\footnote{Mercurial\index{Mercurial} je \emph{open source} alat za verzioniranje izvornog kôda. Besplatno preuzimanje je moguće sa \url{http://mercurial.selenic.com/}.} i Git\footnote{Git\index{Git} je \emph{open source} alat za verzioniranje izvornog kôda napisan od strane Linus Torvaldsa - čovjeka odgovornog za razvoj Linux projekta. Besplatno preuzimanje je moguće sa \url{http://git-scm.com/}.}.
 
 \begin{infobox}
-    NetBeans IDE je izdan od strane Oracle Corporation i on je službeni alat za razvoj Java aplikacija.
+    NetBeans IDE\index{NetBeans IDE} je izdan od strane Oracle Corporation i on je službeni alat za razvoj Java aplikacija.
 \end{infobox}
 
-Naravno, dolazi s punom podrškom za Java tehnologiju te je integriran sa \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jdb}. Ima ugrađeno podršku za \emph{profiling} Java aplikacija (NetBeans Profiler). Integriran je i sa alatima za testiranje kao što su JUnit\footnote{JUnit je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://junit.org/}.} i TestNG\footnote{TestNG je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Alternativa je JUnit alatu i dostupan je za besplatno preuzimanje sa \url{http://testng.org}.} te ima podršku za statičnu analizu izvornog kôda putem FindBugs\footnote{FindBugs je \emph{open source} alat koji je namjenjen za statičnu analizu izvornog kôda napisanog u Javi u svrhu pronalaženja potencijalnih grešaka. Besplatno ga možete preuzeti sa \url{http://findbugs.sourceforge.net/.}} alata. Također dolazi sa integriranim alatom za dizajniranje GUI\footnote{\emph{Graphical User Interface} je tip sučelja pomoću kojega korisnik može vršiti interakciju sa električnim uređajima. Interakcija se vrši pomoću vizualnih kontrola kao što su ikone, dugmadi, prozori i slično.} (eng. \emph{Graphical User Interface}) aplikacija pomoću Matisse alata.
+Naravno, dolazi s punom podrškom za Java tehnologiju te je integriran sa \texttt{javac}, \texttt{java}, \texttt{javadoc}, \texttt{jdb}. Ima ugrađeno podršku za \emph{profiling} Java aplikacija (NetBeans Profiler). Integriran je i sa alatima za testiranje kao što su JUnit\footnote{JUnit\index{JUnit} je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Dostupan je za besplatno preuzimanje sa \url{http://junit.org/}.} i TestNG\footnote{TestNG\index{TestNG} je \emph{open source unit testing framework} koji omogućava testiranje Java aplikacija. Alternativa je JUnit alatu i dostupan je za besplatno preuzimanje sa \url{http://testng.org}.} te ima podršku za statičnu analizu izvornog kôda putem FindBugs\footnote{FindBugs\index{FindBugs} je \emph{open source} alat koji je namjenjen za statičnu analizu izvornog kôda napisanog u Javi u svrhu pronalaženja potencijalnih grešaka. Besplatno ga možete preuzeti sa \url{http://findbugs.sourceforge.net/.}} alata. Također dolazi sa integriranim alatom za dizajniranje GUI\gls{gui}\footnote{\gls{gui} je tip sučelja pomoću kojega korisnik može vršiti interakciju sa električnim uređajima. Interakcija se vrši pomoću vizualnih kontrola kao što su ikone, dugmadi, prozori i slično.} aplikacija pomoću Matisse alata.
 
 NetBeans IDE je modularan, što znači da je dostupan veliki broj modula koji se mogu preuzeti te tako proširiti mogućnosti samoga NetBeans IDE alata. Dostupan je u više različitih paketa koji se mogu preuzeti sa \url{https://netbeans.org/downloads/}. Dakle, ako korisnik ima zadatak da razvija aplikaciju u C/C++ jeziku tada je u mogućnosti da preuzme NetBeans IDE koji dolazi s podrškom samo za C/C++ okruženje. No, paketi se mogu i naknadno dodavati.
 
 Sam NetBeans IDE je zapravo pisan u Java programskom jeziku tako da je on onda dostupan za preuzimanje za sve veće platforme kao što su Microsoft Windows, GNU/Linux i Mac OS.
 
-Treba napomenuti da je NetBeans IDE \emph{open source} projekt kojeg razvija Oracle Corporation. Dakle, NetBeans IDE je službeni alat izdan od strane Oracle Corporation te ga se čak može i preuzeti integriranog s JDK.
+Treba napomenuti da je NetBeans IDE\emph{NetBeans IDE} \emph{open source} projekt kojeg razvija Oracle Corporation. Dakle, NetBeans IDE je službeni alat izdan od strane Oracle Corporation te ga se čak može i preuzeti integriranog s \gls{jdk}.
 
 Slika~\ref{fig:netbeans_ide_overview} prikazuje editor izvornog kôda zajedno sa pregledom datoteka i direktorija koji sačinjavaju projekt. Također se može vidjeti i grafički pregled klase, tj. popis metoda i njihova vidljivost.
 
@@ -243,10 +243,10 @@ Slika~\ref{fig:netbeans_ide_overview} prikazuje editor izvornog kôda zajedno sa
     \includegraphics[max width=\textwidth]{images/netbeans_ide_overview.png}
 \end{figure}
 
-Na slici~\ref{fig:netbeans_ide_gui_editor} se može vidjeti NetBeans IDE i njegov GUI editor. Omogućava da vizualno definirate sučelje umjesto da ga programirate u samom izvornom kôdu.
+Na slici~\ref{fig:netbeans_ide_gui_editor} se može vidjeti NetBeans IDE i njegov \gls{gui} editor. Omogućava da vizualno definirate sučelje umjesto da ga programirate u samom izvornom kôdu.
 
 \begin{figure}[!htbp]
-    \caption{NetBeans IDE GUI editor.}
+    \caption{NetBeans IDE \acrshort{gui} editor.}
     \label{fig:netbeans_ide_gui_editor}
     \centering
     \includegraphics[max width=\textwidth]{images/netbeans_ide_gui_editor.png}
@@ -262,9 +262,9 @@ Slika~\ref{fig:netbeans_ide_profiler} prikazuje \emph{profiler} dostupan unutar 
 \end{figure}
 
 \subsubsection{Eclipse}
-Eclipse je, kao i NetBeans IDE, integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. Kao i NetBeans IDE, Eclipse je modularan no stupanj modularnosti je daleko veći. Podržava razvoj aplikacija u puno više programski jezika. Prema\cite{eclipsesoftware} podržava Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Natural, Perl, PHP, Prolog, R, Ruby, Scala, Clojure, Groovy, Scheme, Erlang, Python.
+Eclipse\index{Eclipse} je, kao i NetBeans IDE, integrirano razvojno okruženje korišteno primarno za razvoj aplikacija pisanih u Java programskom jeziku. Kao i NetBeans IDE, Eclipse je modularan no stupanj modularnosti je daleko veći. Podržava razvoj aplikacija u puno više programski jezika. Prema\cite{eclipsesoftware} podržava Ada, ABAP, C, C++, COBOL, Fortran, Haskell, JavaScript, Lasso, Natural, Perl, PHP, Prolog, R, Ruby, Scala, Clojure, Groovy, Scheme, Erlang, Python.
 
-Kao i kod NetBeans IDE, Eclipse podržava Apache Ant, Apache Maven, Apache Subversion, Mercurial, Git. Nažalost, podrška za Mercurial se mora naknadno instalirati putem modula. Naravno, dostupna je puna podrška za Java tehnologiju. \emph{Profiling} Java aplikacija isto tako se može naknadno instalirati. Kao i kod NetBeans IDE, dostupna je podrška za JUnit no integracija sa TestNG se mora naknadno instalirati. Podržava statičnu analizu izvornog kôda putem FindBugs alata no i ona se naknadno mora instalirati ako se želi koristiti. Ima podršku za dizajniranje GUI aplikacija no, kako to i biva, modul se mora naknadno instalirati.
+Kao i kod NetBeans IDE, Eclipse podržava Apache Ant\index{Apache Ant}, Apache Maven\index{Apache Maven}, Apache Subversion\index{Apache Subversion}, Mercurial\index{Mercurial}, Git\index{Git}. Nažalost, podrška za Mercurial se mora naknadno instalirati putem modula. Naravno, dostupna je puna podrška za Java tehnologiju. \emph{Profiling} Java aplikacija isto tako se može naknadno instalirati. Kao i kod NetBeans IDE, dostupna je podrška za JUnit\index{JUnit} no integracija sa TestNG\index{TestNG} se mora naknadno instalirati. Podržava statičnu analizu izvornog kôda putem FindBugs\index{FindBugs} alata no i ona se naknadno mora instalirati ako se želi koristiti. Ima podršku za dizajniranje \gls{gui} aplikacija no, kako to i biva, modul se mora naknadno instalirati.
 
 Kao što je i rečeno, Eclipse je modularan. No za razliku od NetBeans IDE, količina modula je daleko veća i kvalitetnija. Sam Eclipse je isto tako dostupan u paketima te se paketi isto tako mogu instalirati naknadno.
 
@@ -272,7 +272,7 @@ Kao što je i rečeno, Eclipse je modularan. No za razliku od NetBeans IDE, koli
     Količina i kvaliteta dostupnih modula je puno veća i bolja u odnosu na NetBeans IDE. Korisničko sučelje u Eclipse je \emph{task-oriented} te u nekom danom trenutku vam je dostupno samo ono što vas zanima te na takav način maksimalno sakriva kompleksnost posla. Eclipse je ujedno i preporuka autora ovog priručnika.
 \end{infobox}
 
-Eclipse je isto pisan u Java programskom jeziku te je izdan kao \emph{open source} projekt sponzoriran od strane IBM Corporation i dostupan je za besplatno preuzimanje sa \url{http://eclipse.org}.
+Eclipse\index{Eclipse} je isto pisan u Java programskom jeziku te je izdan kao \emph{open source} projekt sponzoriran od strane IBM Corporation i dostupan je za besplatno preuzimanje sa \url{http://eclipse.org}.
 
 Ono što razdvaja NetBeans IDE i Eclipse je već spomenuta modularnost koja je na vrlo zavidnoj razini u korist Eclipse. Količina i kvaliteta modula je nemjerljiva u odnosu sa NetBeans IDE. Eclipse isto tako ima i bolje riješeno korisničko sučelje. No zamjerka je na tom naknadnom podešavanju, tj. instalaciji dodatnih modula koji su potrebni za razvoj Java aplikacija.
 
