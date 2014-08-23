@@ -81,9 +81,9 @@ So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" se
 
 TeXstudio is an integrated writing environment for creating LaTeX documents. If you want to contribute to the book than this is the tool to use.
 
-Controbutions will be handled by the Git and the GitHub. So, [create an account](https://github.com/join) on the GitHub if you don't have one already. You will use Git to make versions of your changes and the GitHub [pull requests](https://help.github.com/articles/using-pull-requests) to send me your changes.
+Contributions will be handled by the Git and the GitHub. So, [create an account](https://github.com/join) on the GitHub if you don't have one already. You will use Git to make versions of your changes and the GitHub [pull requests](https://help.github.com/articles/using-pull-requests) to send me your changes.
 
-Please, read a bit about the Git and the GitHub itself before you start with your contributions. Happy contributing!
+Please, read a bit about the [Git](http://git-scm.com/doc) and the [GitHub](https://help.github.com/) itself before you start with your contributions. Happy contributing!
 
 # License
 
