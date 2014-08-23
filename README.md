@@ -77,7 +77,7 @@ In order to contribute, first, follow the [How to Generate a PDF](#generate-pdf)
 
 After you have installed the minimum set of tools described in [How to Generate a PDF](#generate-pdf), it is time to install one more tool - TeXstudio.
 
-So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" section and download the TeXstudio for your platform and install it. TeXstudio is a multiplatform software and there is, acctually, quite a large collection of binaries for every possible operating system.
+So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" section and download the TeXstudio for your platform and install it. TeXstudio is a multiplatform software and there is, actually, quite a large collection of binaries for every possible operating system.
 
 TeXstudio is an integrated writing environment for creating LaTeX documents. If you want to contribute to the book than this is the tool to use.
 
