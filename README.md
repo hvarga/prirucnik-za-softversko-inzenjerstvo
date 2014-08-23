@@ -41,7 +41,13 @@ Web browser will download the source materials contained in a ZIP archive. Extra
 
 ## Generate PDF
 
-If you are using GNU/Linux then it is recommended to install `make` package.
+If you are using GNU/Linux then it is recommended to install `make` package. The installation method depends on the distribution. This means that you need to find the installation instructions for your distribution.
+
+For CentOS, open up your terminal and type:
+
+```
+sudo yum install make
+```
 
 **GNU/Linux**
 
@@ -59,7 +65,7 @@ In the root folder of the source materials type:
 latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex
 ```
 
-This will finally generate the PDF document. Enjoy reading!
+Using `make` or `latexmk` directlly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
 
 # License
 
