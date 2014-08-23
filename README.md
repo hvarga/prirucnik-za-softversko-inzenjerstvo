@@ -67,6 +67,20 @@ latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1
 
 Using `make` or `latexmk` directlly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
 
+# How to Contribute the Book
+
+Since this is a book under the Creative Commons license, everyone is free to share and adapt it.
+
+So, if you are willing to contribute by correcting grammar mistakes, making structual changes, alter the visual appereance for better readability, supplement some sections or chapters with additional informations that can help out a reader or even writing a new sections or chapters than by any means - contribute.
+
+In order to contribute, first, follow the [How to Generate a PDF](#How to Generate a PDF) section of this document. Note that if you want to contribute to the book than you need to have the Git. Without it, you cannot send me your changes that you made to the book.
+
+After you have installed the minimum set of tools described in [How to Generate a PDF](#How to Generate a PDF), it is time to install one more tool - TeXstudio.
+
+So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" section and download the TeXstudio for your platform and install it. TeXstudio is a multiplatform software and there is, acctually, quite a large collection of binaries for every possible operating system.
+
+TeXstudio is an integrated writing environment for creating LaTeX documents. If you want to contribute to the book than this is the tool to use.
+
 # License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.
