@@ -67,7 +67,7 @@ latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1
 
 Using `make` or `latexmk` directlly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
 
-# How to Contribute the Book
+# How to Contribute to the Book
 
 Since this is a book under the Creative Commons license, everyone is free to share and adapt it.
 
