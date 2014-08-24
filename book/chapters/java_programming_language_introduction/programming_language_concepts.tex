@@ -68,9 +68,9 @@ E sad, šta je to klasa? U stvarnom svijetu često ćete naići na objekte iste 
 
 U objektno orijentiranoj terminologiji mi kažemo da je svaki taj automobil instanca (eng. \emph{instance}) iste klase (eng. \emph{class}). Dakle, klasa\index{klasa} je nacrt (eng. \emph{blueprint}) od koje se svaki objekt stvoren. Definicija klase određuje mogućnosti svakog objekta te klase.
 
-Sljedeći kôd predstavlja klasu i ona je jedna od mogućih implementacija bicikla:~\cite{javatutorials}
+Program \ref{lst:bicycle} predstavlja klasu i ona je jedna od mogućih implementacija bicikla:~\cite{javatutorials}
 
-\begin{lstlisting}[language=java, caption=Bicycle]
+\begin{lstlisting}[language=java, caption=Bicycle, label=lst:bicycle]
 class Bicycle {
     int cadence = 0;
     int speed = 0;
@@ -100,9 +100,9 @@ class Bicycle {
 
 Naravno da je, u ovom trenutku, kôd iznad totalno nepoznat. No promotrite dizajn te klase i prisjetite se što smo pričali u poglavlju prije. Svaki objekt ima svoja stanja\index{objekt!stanje} i metode\index{objekt!ponašanje}. U ovom slučaju, varijable \texttt{cadence}, \texttt{speed} i \texttt{gear} predstavljaju stanja objekta i \texttt{changeCadence()}, \texttt{changeGear()}, \texttt{speedUp()}, \texttt{applyBrakes()} i \texttt{printStates()} predstavljaju metode objekta.
 
-Kao što je i rečeno, da bi se koristila ta klasa vi morate od nje napraviti objekt. Dakle, morate napraviti instancu te klase. Sljedeći kôd predstavlja također jednu klasu koja zapravo koristi klasu \texttt{Bicycle}.~\cite{javatutorials}
+Kao što je i rečeno, da bi se koristila ta klasa vi morate od nje napraviti objekt. Dakle, morate napraviti instancu te klase. Program \ref{lst:bicycle_driver} predstavlja također jednu klasu koja zapravo koristi klasu \texttt{Bicycle}.~\cite{javatutorials}
 
-\begin{lstlisting}[language=java, caption=BicycleDriver]
+\begin{lstlisting}[language=java, caption=BicycleDriver, label=lst:bicycle_driver]
 class BicycleDriver {
     public static void main(String[] args) {
         // Create two different Bicycle objects
