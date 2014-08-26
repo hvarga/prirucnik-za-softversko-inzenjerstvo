@@ -12,10 +12,14 @@
     \noindent{\Huge \textsf{Priručnik za softversko inženjerstvo}}
     \vskip\baselineskip
     \noindent
-    \textsf{Autor: Hrvoje Varga}
-    \newline
-    \textsf{Datum: \commitdate}
-    \newline
-    \textsf{Verzija: \commitid}
+    \textsf{\textbf{Autor}: Hrvoje Varga}
+    \ifdefined\commitdate
+        \newline
+        \textsf{\textbf{Datum}: \commitdate}
+    \fi
+    \ifdefined\commitid
+        \newline
+        \textsf{\textbf{Verzija}: \commitid}
+    \fi
 \end{titlepage}
 \nopagecolor
