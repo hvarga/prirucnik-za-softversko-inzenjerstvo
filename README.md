@@ -69,11 +69,17 @@ Using `make` or `latexmk` directlly will finally generate the PDF document. PDF 
 
 # How to Contribute to the Book
 
-Since this is a book under the Creative Commons license, everyone is free to share and adapt it.
+Since this book is under the Creative Commons license, everyone is free to share and adapt it.
 
 So, if you are willing to contribute by correcting grammar mistakes, making structual changes, alter the visual appereance for better readability, supplement some sections or chapters with additional informations that can help out a reader or even writing a new sections or chapters than by any means - contribute.
 
-In order to contribute, first, follow the [How to Generate a PDF](#generate-pdf) section of this document. Note that if you want to contribute to the book than you need to have the Git. Without it, you cannot send me your changes that you made to the book.
+## Learn LaTeX
+
+This book is written using the [LaTeX](http://latex-project.org/). So, if you want to contribute to the book than, obviously, you need to know LaTeX. Its homepage has a lot of good informations for reading. But if I have to single out just one good book to read than I would recommend ["The (Not So) Short Introduction to LaTeX2e"](http://ctan.tug.org/tex-archive/info/lshort/english/lshort.pdf). If you don't have the time to invest in learning another technology or you are just too lazy than, please, at least read this recommended book.
+
+## Configure Environment
+
+Now to the fun part - in order to contribute, first, follow the [How to Generate a PDF](#generate-pdf) section of this document. Note that if you want to contribute to the book than you need to have the Git. Without it, you cannot send me your changes that you made to the book.
 
 After you have installed the minimum set of tools described in [How to Generate a PDF](#generate-pdf), it is time to install one more tool - TeXstudio.
 
