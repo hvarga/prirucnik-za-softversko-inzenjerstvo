@@ -33,13 +33,73 @@
 \newtcolorbox{infobox} {
     floatplacement=!htbp
     float,
-    title=Dobro je znati!,
+    title=Info,
     coltitle=black,
     breakable,
     enhanced,
     arc=2mm,
-    colback=yellow!30,
-    colframe=yellow!70!orange
+    colback=gray!20,
+    colframe=gray!40,
+    leftrule=12mm,
+    overlay unbroken and first={
+        \node[anchor=north west,outer sep=2pt] at (frame.north west) {
+            \includegraphics[width=8mm]{images/info.png}
+        };
+    }
+}
+
+\newtcolorbox{tipbox} {
+    floatplacement=!htbp
+    float,
+    title=Savjet,
+    coltitle=black,
+    breakable,
+    enhanced,
+    arc=2mm,
+    colback=yellow!20,
+    colframe=yellow!40,
+    leftrule=12mm,
+    overlay unbroken and first={
+        \node[anchor=north west,outer sep=2pt] at (frame.north west) {
+            \includegraphics[width=8mm]{images/tip.png}
+        };
+    }
+}
+
+\newtcolorbox{importantbox} {
+    floatplacement=!htbp
+    float,
+    title=Važno!,
+    coltitle=black,
+    breakable,
+    enhanced,
+    arc=2mm,
+    colback=orange!20,
+    colframe=orange!40,
+    leftrule=12mm,
+    overlay unbroken and first={
+        \node[anchor=north west,outer sep=2pt] at (frame.north west) {
+            \includegraphics[width=8mm]{images/important.png}
+        };
+    }
+}
+
+\newtcolorbox{alertbox} {
+    floatplacement=!htbp
+    float,
+    title=Oprez!,
+    coltitle=black,
+    breakable,
+    enhanced,
+    arc=2mm,
+    colback=red!20,
+    colframe=red!40,
+    leftrule=12mm,
+    overlay unbroken and first={
+        \node[anchor=north west,outer sep=2pt] at (frame.north west) {
+            \includegraphics[width=8mm]{images/alert.png}
+        };
+    }
 }
 
 \bibliography{bibliography}
