@@ -1,6 +1,7 @@
 build:
 	@echo "Generating PDF file..."
-	@git log -1 --format=\\verb+%H+ > book/current_commit.tex
+	@git log -1 --format=\\newcommand{\\commitid}{%H} > book/current_commit.tex
+	@git log -1 --date=iso --format=\\newcommand{\\commitdate}{%ad} >> book/current_commit.tex
 	
 	@# We need to call latexmk to generate all the data necessary to generate a PDF.
 	latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex
