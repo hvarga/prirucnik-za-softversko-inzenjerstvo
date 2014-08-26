@@ -16,15 +16,15 @@ Go to https://www.tug.org/texlive/acquire-netinstall.html and follow directions.
 
 ## Download the Source Materials
 
-First you need to download the source materials for the Software Engineering Manual. This can be acomplished using the Git to clone the repository or to download the source materials directlly using your web browser.
+Second step is to download the source materials for the Software Engineering Manual. This can be acomplished using the Git to clone the repository or to download the source materials directlly using your web browser.
 
-If you want to use the Git than you need to have it installed on your system. So, one more tool to install. There is just one minor difference between using Git or downloading the source materials directlly using your web browser. The generated PDF will lack the version statement if you choose to download the source materials directlly using your web browser.
+If you want to use the Git than you need to have it installed on your system. So, one more tool to install. There is just one minor difference between using Git or downloading the source materials directly using your web browser. The generated PDF will lack the date and the version statement if you choose to download the source materials directlly using your web browser.
 
 **Git**
 
 Go to http://git-scm.com/downloads and choose your operating system and foolow directions.
 
-Now that you installed the Git it is time to clone the Software Engineering Manual repository.
+Now that you installed the Git, it is time to clone the Software Engineering Manual repository.
 
 Open up your terminal and enter the following:
 ```
@@ -35,7 +35,7 @@ Git will do its magic and you will have the source materials.
 
 **Web browser**
 
-Go to the https://github.com/hvarga/software-engineering-manual/archive/master.zip to download the source materials.
+If you are reluctant to install Git then point your web browser to the https://github.com/hvarga/software-engineering-manual/archive/master.zip to download the source materials.
 
 Web browser will download the source materials contained in a ZIP archive. Extract this archive somewher on your disk.
 
@@ -81,7 +81,7 @@ This book is written using the [LaTeX](http://latex-project.org/). So, if you wa
 
 Now to the fun part - in order to contribute, first, follow the [How to Generate a PDF](#generate-pdf) section of this document. Note that if you want to contribute to the book than you need to have the Git. Without it, you cannot send me your changes that you made to the book.
 
-After you have installed the minimum set of tools described in [How to Generate a PDF](#generate-pdf), it is time to install one more tool - TeXstudio.
+After you have installed the tools described in [How to Generate a PDF](#generate-pdf), it is time to install one more tool - TeXstudio.
 
 So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" section and download the TeXstudio for your platform and install it. TeXstudio is a multiplatform software and there is, actually, quite a large collection of binaries for every possible operating system.
 
