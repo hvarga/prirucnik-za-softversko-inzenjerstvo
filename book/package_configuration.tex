@@ -111,3 +111,11 @@
 
 \makeindex
 \makeglossaries
+
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage} {
+    \clearpage{
+        \pagestyle{empty}
+        \origdoublepage
+    }
+}

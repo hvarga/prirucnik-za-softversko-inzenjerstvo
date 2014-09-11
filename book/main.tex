@@ -3,6 +3,7 @@
 \begin{document}
     \frontmatter
         \pagestyle{empty}
+        \addcontentsline{toc}{chapter}{Naslovnica}
         \input{title_page}
         \input{copyright_statement}
         \tableofcontents
@@ -12,8 +13,10 @@
         \addcontentsline{toc}{chapter}{Uvod}
     
     \mainmatter
-        \pagestyle{fancy}
+        \pagestyle{empty}
+        \let\cleardoublepage\clearemptydoublepage
         \begin{part}{Uvod u programski jezik Java}
+            \pagestyle{fancy}
             \chapter{Java tehnologija}
             \input{chapters/java_programming_language_introduction/java_technology}
             
