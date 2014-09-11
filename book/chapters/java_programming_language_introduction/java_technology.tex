@@ -15,7 +15,7 @@
 \section{Proces razvoja Java aplikacije}
 Slika~\ref{fig:software_development_process} prikazuje pregled procesa razvoja Java aplikacije.~\cite{javatutorials}
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Proces razvoja Java aplikacije.}
     \label{fig:software_development_process}
     \centering
@@ -26,7 +26,7 @@ U Java programskom jeziku, izvorni kôd (eng. \emph{source code}) je pisan u tek
 
 No te datoteke su pisane od strane programera i one, kao takve, nisu razumljive samom procesoru računala kojeg želimo isprogramirati. Taj problem rješava Java prevoditelj\index{prevoditelj} (eng. \emph{compiler}\index{\emph{compiler}|see {prevoditelj}}) koji će uzeti te datoteke koje su napisane od strane programera i prevesti ih u oblik razumljiv računalu. Dakle, za svaku datoteku koja sadrži izvorni kôd će napraviti po jednu dodatnu datoteku istog naziva samo drugačijeg završetka - \texttt{.class}\index{\texttt{.class}}. Drugim riječima, ako imamo datoteku naziva \texttt{MyProgram.java} tada će prevoditelj\index{prevoditelj} proizvesti datoteku naziva \texttt{MyProgram.class}. Postupak prevođenja datoteke koja sadrži izvorni kôd u datoteku koja sadrži Java \emph{bytecode} je opisan sljedećim primjerom: Ako postoji izvorni kôd napisan u \texttt{MyProgram.java} datoteci koju želimo prevesti u \texttt{MyProgram.class} datoteku koja sadrži Java \emph{bytecode} onda moramo u naredbenom retku upisati sljedeće:
 
-\begin{lstlisting}
+\begin{lstlisting}[numbers=none]
     $ javac MyProgram.java
 \end{lstlisting}
 
@@ -48,7 +48,7 @@ No tu priča zapravo ne prestaje. Ranije je rečeno da su datoteke koje Java pre
 
 Da bi pokrenuli ranije prevođenu datoteku \texttt{MyProgram.class} pomoću \gls{jvm}, moramo koristiti sljedeću naredbu u naredbenom retku:
 
-\begin{lstlisting}
+\begin{lstlisting}[numbers=none]
     $ java MyProgram
 \end{lstlisting}
 
@@ -69,7 +69,7 @@ Java platforma\index{Java platforma} se sastoji od dva dijela:
 
 Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java platforme\index{Java platforma}.~\cite{javatutorials}
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Slojeviti model Java platforme.}
     \label{fig:java_platform_layer_model}
     \centering
@@ -79,7 +79,7 @@ Slika~\ref{fig:java_platform_layer_model} slikovito opisuje slojeviti model Java
 \textbf{Java virtualna mašina}\\
 Java virtualna mašina\index{Java virtualna mašina} je ključna komponenta cijele Java platforme te vrijedi spomenuti par činjenica tako da se dobije bolja predodžba i da se poveća razumijevanje cjelokupne Java tehnologije. S tim rečeno, promotrimo sliku~\ref{fig:java_platform_benefits}~\cite{javatutorials}.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Prednosti Java platforme.}
     \label{fig:java_platform_benefits}
     \centering
@@ -182,13 +182,13 @@ Naravno, lista iznad sadrži samo jedan mali set mogučnosti tekstualnih editora
 
 Pravi problem kod tekstualnih editora je njihova skalabilnost. Naime, vaša aplikacija će se sa vremenom povećavati, tj. sirovi broj linija kôda, količina datoteka potrebnih za rad aplikacije i dodatne biblioteke koje su potrebne za rad same aplikacije će unositi dodatni \emph{kaos} u vašem svakodnevnom radu. Naravno, sve ovisi i o disciplini samog inženjera. No uz današnje dostupne alate, tekstualni editori kao takvi se rijetko koriste. Njih zamjenjuju integrirana razvojna okruženja\index{integrirano razvojno okruženje}.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Geany.}
     \label{fig:geany}
     \centering
     \includegraphics[max width=\textwidth]{images/geany.png}
 \end{figure}
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Notepad++.}
     \label{fig:notepadpp}
     \centering
@@ -236,7 +236,7 @@ Treba napomenuti da je NetBeans IDE\emph{NetBeans IDE} \emph{open source} projek
 
 Slika~\ref{fig:netbeans_ide_overview} prikazuje editor izvornog kôda zajedno sa pregledom datoteka i direktorija koji sačinjavaju projekt. Također se može vidjeti i grafički pregled klase, tj. popis metoda i njihova vidljivost.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{NetBeans IDE glavno sučelje.}
     \label{fig:netbeans_ide_overview}
     \centering
@@ -245,7 +245,7 @@ Slika~\ref{fig:netbeans_ide_overview} prikazuje editor izvornog kôda zajedno sa
 
 Na slici~\ref{fig:netbeans_ide_gui_editor} se može vidjeti NetBeans IDE i njegov \gls{gui} editor. Omogućava da vizualno definirate sučelje umjesto da ga programirate u samom izvornom kôdu.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{NetBeans IDE \acrshort{gui} editor.}
     \label{fig:netbeans_ide_gui_editor}
     \centering
@@ -254,7 +254,7 @@ Na slici~\ref{fig:netbeans_ide_gui_editor} se može vidjeti NetBeans IDE i njego
 
 Slika~\ref{fig:netbeans_ide_profiler} prikazuje \emph{profiler} dostupan unutar NetBeans IDE. Kao što se iz slike vide, programer može izmjeriti količinu potrošene memorije i procesora u nekom trenutku.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{NetBeans IDE \emph{profiler}.}
     \label{fig:netbeans_ide_profiler}
     \centering
@@ -278,7 +278,7 @@ Ono što razdvaja NetBeans IDE i Eclipse je već spomenuta modularnost koja je n
 
 Slika~\ref{fig:eclipse_overview} prikazuje Eclipse i mogućnosti perspektiva. Slika to ne može prikazati no klikom na neku perspektivu, Eclipse će automatski prilagoditi svoje sučelje toj odabranoj perspektivi. Drugim riječima, ako korisnik odabere "\emph{CVS Repository Exploring}" tekst editor će se zatvoriti i sučelje će sada prikazivati tablicu s listom svih revizija vašeg izvornog kôda. Alatne trake imat će samo naredbe koje se tiču CVS alata, tj. naredbe za manipulaciju povijesti izvornog kôda.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
     \caption{Eclipse i JavaEE perspektiva.}
     \label{fig:eclipse_overview}
     \centering
