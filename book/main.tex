@@ -13,10 +13,9 @@
         \addcontentsline{toc}{chapter}{Uvod}
     
     \mainmatter
-        \pagestyle{empty}
+        \pagestyle{fancy}
         \let\cleardoublepage\clearemptydoublepage
         \begin{part}{Uvod u programski jezik Java}
-            \pagestyle{fancy}
             \chapter{Java tehnologija}
             \input{chapters/java_programming_language_introduction/java_technology}
             
@@ -24,8 +23,8 @@
             \input{chapters/java_programming_language_introduction/programming_language_concepts}
         \end{part}
         
-    \pagestyle{empty}
     \backmatter
+        \pagestyle{empty}
         \printbibliography[heading=bibintoc]
         \clearpage
         \phantomsection
