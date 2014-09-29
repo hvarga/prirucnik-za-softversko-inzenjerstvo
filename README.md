@@ -2,13 +2,13 @@
 
 The goal is to write a book which will help you to learn the basic methodologies, processes and technics about the software development in general.
 
-The book is acctually oriented on the Java technology but nevertheless, it can be applied to any programming language.
+The book is actually oriented on the Java technology but nevertheless, it can be applied to any programming language.
 
 Book is at its initial stage of writing and it is available only in a Croatian language.
 
 # How to Generate a PDF
 
-To be able to generate a PDF yourself you have to have quite a large collection of tools.
+To be able to generate a PDF yourself you have to have quite a large collection of tools. So follow the sections below to configure your environment.
 
 ## Download and Install TeX Live
 
@@ -16,9 +16,9 @@ Go to https://www.tug.org/texlive/acquire-netinstall.html and follow directions.
 
 ## Download the Source Materials
 
-Second step is to download the source materials for the Software Engineering Manual. This can be acomplished using the Git to clone the repository or to download the source materials directlly using your web browser.
+Second step is to download the source materials for the Software Engineering Manual. This can be acomplished using the Git to clone the repository or to download the source materials directly using your web browser.
 
-If you want to use the Git than you need to have it installed on your system. So, one more tool to install. There is just one minor difference between using Git or downloading the source materials directly using your web browser. The generated PDF will lack the date and the version statement if you choose to download the source materials directlly using your web browser.
+If you want to use the Git than you need to have it installed on your system. So, one more tool to install. There is just one minor difference between using Git or downloading the source materials directly using your web browser. The generated PDF will lack the date and the version statement if you choose to download the source materials directly using your web browser.
 
 **Git**
 
@@ -65,7 +65,7 @@ In the root folder of the source materials type:
 latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex
 ```
 
-Using `make` or `latexmk` directlly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
+Using `make` or `latexmk` directly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
 
 # How to Contribute to the Book
 
