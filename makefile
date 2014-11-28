@@ -10,5 +10,5 @@ build:
 	
 	@echo "PDF file generated at `pwd`/book/prirucnik_za_softversko_inzenjerstvo.pdf."
 clean:
-	@find book | egrep "(current_commit.tex|*.aux$$|*.log$$|*.pdf$$|*.out$$|*.toc$$|*.lof$$|*.bbl$$|*.blg$$|*.xml$$|*blx.bib$$|*synctex.gz$$|*.lol$$|*.idx$$|*.ilg$$|*.ind$$|*.fdb_latexmk$$|*.fls$$|*.acn$$|*.acr$$|*.alg$$|*.glg$$|*.glo$$|*.gls$$|*.ist$$|*.bcf$$)" | xargs --no-run-if-empty rm
+	@find -E book -regex 'current_commit.tex|.*.aux|.*.log|.*.pdf|.*.out|.*.toc|.*.lof|.*.bbl|.*.blg|.*.xml|.*blx.bib|.*synctex.gz|.*.lol|.*.idx|.*.ilg|.*.ind|.*.fdb_latexmk|.*.fls|.*.acn|.*.acr|.*.alg|.*.glg|.*.glo|.*.gls|.*.ist|.*.bcf' -type f -delete
 	@echo "Everything clean."
