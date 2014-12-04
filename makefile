@@ -4,11 +4,13 @@ build:
 	@git log -1 --date=iso --format=\\newcommand{\\commitdate}{%ad} >> book/current_commit.tex
 	
 	@# We need to call latexmk to generate all the data necessary to generate a PDF.
-	latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex
+	@mkdir book/build
+	latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex -jobname=build/main
 	
-	@cp book/main.pdf book/prirucnik_za_softversko_inzenjerstvo.pdf
+	@cp book/build/main.pdf book/build/prirucnik_za_softversko_inzenjerstvo.pdf
 	
-	@echo "PDF file generated at `pwd`/book/prirucnik_za_softversko_inzenjerstvo.pdf."
+	@echo "PDF file generated at `pwd`/book/build/prirucnik_za_softversko_inzenjerstvo.pdf."
 clean:
-	@find -E book -regex 'current_commit.tex|.*.aux|.*.log|.*.pdf|.*.out|.*.toc|.*.lof|.*.bbl|.*.blg|.*.xml|.*blx.bib|.*synctex.gz|.*.lol|.*.idx|.*.ilg|.*.ind|.*.fdb_latexmk|.*.fls|.*.acn|.*.acr|.*.alg|.*.glg|.*.glo|.*.gls|.*.ist|.*.bcf' -type f -delete
+	@rm -rf book/build
+	@rm -rf book/current_commit.tex
 	@echo "Everything clean."

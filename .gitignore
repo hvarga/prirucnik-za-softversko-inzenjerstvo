@@ -1,32 +1,5 @@
-# Core LaTeX auxiliary files
-*.aux
-*.log
-*.toc
-*.out
-*.toc
-*.lof
-*blx.bib
-*.bbl
-*.blg
-*synctex.gz
-*.xml
-*.lol
-*.idx
-*.ilg
-*.ind
-*.fdb_latexmk
-*.fls
-*.acn
-*.acr
-*.alg
-*.glg
-*.glo
-*.gls
-*.ist
-*.bcf
+# Build directory containing LaTeX auxilary and output files.
+book/build
 
 # Intermediate files
 current_commit.tex
-
-# Output files
-*.pdf
