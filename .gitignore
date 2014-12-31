@@ -3,3 +3,6 @@ book/build
 
 # Intermediate files
 current_commit.tex
+
+# Mac OS metadata
+.DS_Store
