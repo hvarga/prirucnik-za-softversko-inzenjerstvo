@@ -87,7 +87,13 @@ So, head on to the http://texstudio.sourceforge.net/ and go to the "Download" se
 
 TeXstudio is an integrated writing environment for creating LaTeX documents. If you want to contribute to the book than this is the tool to use.
 
-Contributions will be handled by the Git and the GitHub. So, [create an account](https://github.com/join) on the GitHub if you don't have one already. You will use Git to make versions of your changes and the GitHub [pull requests](https://help.github.com/articles/using-pull-requests) to send me your changes.
+Next screenshot shows the TeXstudio in action.
+![TeXstudio main screen](https://github.com/hvarga/software-engineering-manual/resources/texstudio-main-screen.tiff)
+
+After the installation of the TeXstudio, confifure it according the screenshot bellow.
+![TeXstudio configuration](https://github.com/hvarga/software-engineering-manual/resources/texstudio-main-screen.tiff)
+
+Contributions to this book will be handled by the Git and the GitHub. So, [create an account](https://github.com/join) on the GitHub if you don't have one already. You will use Git to make versions of your changes and the GitHub [pull requests](https://help.github.com/articles/using-pull-requests) to send me your changes.
 
 Please, read a bit about the [Git](http://git-scm.com/doc) and the [GitHub](https://help.github.com/) itself before you start with your contributions. Happy contributing!
 
