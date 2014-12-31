@@ -41,7 +41,7 @@ Web browser will download the source materials contained in a ZIP archive. Extra
 
 ## Generate PDF
 
-If you are using GNU/Linux then it is recommended to install `make` package. The installation method depends on the distribution. This means that you need to find the installation instructions for your distribution.
+If you are using GNU/Linux, Mac OS or any UNIX then it is recommended to install `make` package. The installation method depends on the distribution. This means that you need to find the installation instructions for your distribution.
 
 For CentOS, open up your terminal and type:
 
@@ -62,10 +62,10 @@ make
 In the root folder of the source materials type:
 
 ```
-latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex
+latexmk -r book/latexmkrc -verbose -time -latexoption='-halt-on-error -synctex=1' -pdf -cd book/main.tex -jobname=build/main
 ```
 
-Using `make` or `latexmk` directly will finally generate the PDF document. PDF will be stored in the `book` folder. Enjoy reading!
+Using `make` or `latexmk` directly will finally generate the PDF document. PDF will be stored in the `book/build` folder. Enjoy reading!
 
 # How to Contribute to the Book
 
@@ -90,7 +90,7 @@ TeXstudio is an integrated writing environment for creating LaTeX documents. If 
 Next screenshot shows the TeXstudio in action.
 ![TeXstudio main screen](resources/texstudio-main-screen.tiff)
 
-After the installation of the TeXstudio, confifure it according the screenshot bellow.
+After the installation of the TeXstudio, configure it according the screenshot bellow.
 ![TeXstudio configuration](resources/texstudio-configure-build.tiff)
 
 Contributions to this book will be handled by the Git and the GitHub. So, [create an account](https://github.com/join) on the GitHub if you don't have one already. You will use Git to make versions of your changes and the GitHub [pull requests](https://help.github.com/articles/using-pull-requests) to send me your changes.
